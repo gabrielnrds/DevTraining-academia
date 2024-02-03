@@ -11,18 +11,17 @@ public class Avaliacao {
     private Cliente cliente;
     private LocalDateTime dataHora;
     private String objetivo;
-    private Medidas medidas;
     private double imc;
 
-    public Avaliacao(Professor professor, Cliente cliente, String objetivo, Medidas medidas) {
+    public Avaliacao(Professor professor, Cliente cliente, String objetivo) {
         setId_avaliacao(gerarNumId());
         setProfessor(professor);
         setCliente(cliente);
         setDataHora(LocalDateTime.now());
         setObjetivo(objetivo);
-        setMedidas(medidas);
-        setImc(calcularImc());
+
     }
+
 
     //gerar id
     public int gerarNumId() {
@@ -36,13 +35,7 @@ public class Avaliacao {
     }
 
     //calcularIMC
-    public double calcularImc() {
-        double altura, peso, imc;
-        altura = medidas.getAltura();
-        peso = medidas.getPeso();
-        imc = (peso / (altura * altura));
-        return imc;
-    }
+    
 
     //imprimir avaliação
     public String toString() {
@@ -51,7 +44,6 @@ public class Avaliacao {
         resultado += "Data/horario:	" + dataHora + "\n";
         resultado += "----------------------------------------------\n";
         resultado += "Objetivo:\n        " + objetivo + "\n";
-        resultado += "Medidas:" + medidas.toString() + "\n";
         resultado += "----------------------------------------------\n";
         resultado += "IMC: " + imc;
 
@@ -78,10 +70,7 @@ public class Avaliacao {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
-
-    public void setMedidas(Medidas medidas) {
-        this.medidas = medidas;
-    }
+    
 
     public void setImc(double imc) {
         this.imc = imc;
@@ -108,9 +97,7 @@ public class Avaliacao {
         return this.objetivo;
     }
 
-    public Medidas getMedidas() {
-        return this.medidas;
-    }
+    
 
     public double getImc() {
         return this.imc;
@@ -124,7 +111,6 @@ public class Avaliacao {
                 .append(cliente.getId()).append(";")
                 .append(dataHora).append(";")
                 .append(objetivo).append(";")
-                .append(medidas.toFormattedString()).append(";")
                 .append(imc);
 
         return formattedString.toString();
