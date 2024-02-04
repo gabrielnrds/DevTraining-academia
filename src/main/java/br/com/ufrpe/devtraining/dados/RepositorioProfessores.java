@@ -1,19 +1,12 @@
 package br.com.ufrpe.devtraining.dados;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 
-public class RepositorioProfessores {
-    private Professor[] professores;
+public class RepositorioProfessores implements Serializable {
+    private Professor[]professores ;
     private int proxima;
     private String arquivo = "professores.txt";
 
@@ -30,32 +23,22 @@ public class RepositorioProfessores {
         }
         this.professores[this.proxima] = professor;
         this.proxima++;
-
-        if (this.proxima == this.professores.length) {
-            this.duplicaArrayContas();
-        }
         salvarDados();
+
     }
 
-    private boolean existeProfessorComId(long id) {
+    private boolean existeProfessorComId(int id) {
         return buscar(id) != null;
     }
 
-    // Método para duplicar o array caso fique cheio
-    private void duplicaArrayContas() {
-        if (this.professores != null && this.professores.length > 0) {
-            Professor[] arrayDuplicado = new Professor[this.professores.length * 2];
-            System.arraycopy(this.professores, 0, arrayDuplicado, 0, this.professores.length);
-            this.professores = arrayDuplicado;
-        }
-    }
+
 
     // Método para buscar
-    public Professor buscar(long id_professor) {
+    public Professor buscar(int id_professor) {
         int i = 0;
+
         while (i < this.proxima) {
-            long idProfessorWrapper = this.professores[i].getIdDoProfessor();
-            if (id_professor == idProfessorWrapper) {
+            if (id_professor==this.professores[i].getIdDoProfessor()) {
                 return this.professores[i];
             }
             i++;
@@ -64,12 +47,11 @@ public class RepositorioProfessores {
     }
 
     // Método para remover
-    public void remover(long id_professor) {
+    public void remover(int id_professor) {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            long idProfessorWrapper = this.professores[i].getIdDoProfessor();
-            if (id_professor == idProfessorWrapper) {
+            if (id_professor == this.professores[i].getIdDoProfessor()) {
                 achou = true;
             } else {
                 i++;
@@ -81,6 +63,7 @@ public class RepositorioProfessores {
             this.professores[this.proxima - 1] = null;
             this.proxima--;
             salvarDados();
+
             System.out.println("Professor " + id_professor + " removido com sucesso.");
         } else {
             System.out.println("Professor não encontrado.");
@@ -88,14 +71,12 @@ public class RepositorioProfessores {
     }
 
     // Método para alterar as informações de um professor
-    public void alterar(long id_professor, Professor novoProfessor) {
+    public void alterar(int id_professor, Professor novoProfessor) {
         int i = 0;
         boolean achou = false;
-
         // Procura o professor com o ID fornecido
         while ((!achou) && (i < this.proxima)) {
-            long idProfessorWrapper = this.professores[i].getIdDoProfessor();
-            if (id_professor == idProfessorWrapper) {
+            if (id_professor == this.professores[i].getIdDoProfessor()) {
                 achou = true;
             } else {
                 i++;
@@ -106,26 +87,22 @@ public class RepositorioProfessores {
         if (achou) {
             this.professores[i] = novoProfessor;
             System.out.println("Professor " + id_professor + " alterado com sucesso.");
+
         } else {
             System.out.println("Professor não encontrado.");
         }
         salvarDados();
     }
-
-    // Salva os dados no arquivo
     void salvarDados() {
-        try (BufferedWriter writer = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream(arquivo), StandardCharsets.UTF_8))) {
-            for (int i = 0; i < proxima; i++) {
-                writer.write(professores[i].toFormattedString());
-                writer.newLine();
-            }
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+                new FileOutputStream(arquivo))) {
+            objectOutputStream.writeObject(professores);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // Carrega dados do arquivo
+    // Carrega dados do arquivo usando serialização
     void carregarDados() {
         File file = new File(arquivo);
 
@@ -139,49 +116,22 @@ public class RepositorioProfessores {
             return;
         }
 
-        // Usando try-with-resources para garantir que o BufferedReader seja fechado automaticamente
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                Professor professor = criarProfessorAPartirDaLinha(linha);
-                cadastrar(professor);
-            }
-        } catch (IOException e) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(
+                new FileInputStream(arquivo))) {
+            professores = (Professor[]) objectInputStream.readObject();
+            proxima = professores.length;
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-
-    // Método para criar Professor a partir da linha
-    // Método auxiliar para criar um Professor a partir de uma linha do arquivo
-    private Professor criarProfessorAPartirDaLinha(String linha) {
-        try {
-            String[] dados = linha.split("\\s+");
-            if (dados.length >= 9) {
-                long id = Long.parseLong(dados[0].trim());
-                String nome = dados[1].trim();
-                String telefone = dados[2].trim();
-                String email = dados[3].trim();
-                String cpf = dados[4].trim();
-
-                if (dados[5].matches("\\d+") && dados[6].matches("\\d+")) {
-                    int idade = Integer.parseInt(dados[5].trim());
-                    int codigo = Integer.parseInt(dados[6].trim());
-                    String turno = dados[7].trim();
-
-                    // Trate possíveis vírgulas em valores numéricos
-                    String salarioString = dados[8].replaceAll(",", ".");
-                    double salario = Double.parseDouble(salarioString);
-
-                    return new Professor(id, nome, telefone, email, cpf, salarioString, idade, turno, salario);
-                } else {
-                    throw new IllegalArgumentException("Formato de linha inválido: " + linha);
-                }
-            } else {
-                throw new IllegalArgumentException("Formato de linha inválido: " + linha);
-            }
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
-            throw new IllegalArgumentException("Erro ao converter dados da linha: " + linha, e);
-        }
-    }
 }
+
+
+
+
+
+
+
+
+
+

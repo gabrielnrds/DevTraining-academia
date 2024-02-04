@@ -1,10 +1,12 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
 
 
-public class Professor extends Pessoa {
+public class Professor extends Pessoa
+        implements Serializable{
 
     private String turno;
     private double salario;
@@ -13,7 +15,7 @@ public class Professor extends Pessoa {
 
     }
 
-    public Professor(long id, String nome, String telefone, String email, String cpf, String endereco, int idade, String turno, double salario) {
+    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, int idade, String turno, double salario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.turno = turno;
         this.salario = salario;
@@ -22,8 +24,8 @@ public class Professor extends Pessoa {
 
 
 
-    public long getIdDoProfessor(){
-        return getId();
+    public int getIdDoProfessor(){
+        return (int) getId();
     }
 
     public String getTurno() {
@@ -78,12 +80,7 @@ public class Professor extends Pessoa {
         scanner.close();
     }
 
-    //Adição do metodo toFormattedString
-    public String toFormattedString() {
-        return String.format("%d %s %s %s %s %d %d %s %.2f",
-                getIdDoProfessor(), getNome(), getTelefone(), getEmail(), getCpf(),
-                getIdade(), getIdDoProfessor(), getTurno(), getSalario());
-    }
+
 
 
 }

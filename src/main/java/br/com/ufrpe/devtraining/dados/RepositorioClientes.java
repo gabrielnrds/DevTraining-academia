@@ -135,66 +135,13 @@ public class RepositorioClientes {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return;
-        }
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                Cliente cliente = criarClienteAPartirDaLinha(linha, null);
-                cadastrar(cliente);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
-    private Cliente criarClienteAPartirDaLinha(String linha, RepositorioProfessores repositorioProfessores) {
-        try {
-            String[] dados = linha.split("\\s+");
-            if (dados.length >= 10) {
-                String nome = dados[0].trim();
-                String telefone = dados[1].trim();
-                String email = dados[2].trim();
-                String cpf = dados[3].trim();
-                int idade = Integer.parseInt(dados[4].trim());
-                String endereco = dados[5].trim();
 
-                int indiceTreino = -1;
 
-                // Procurar o índice do treino
-                for (int i = 6; i < dados.length; i++) {
-                    if ("Treino:".equals(dados[i])) {
-                        indiceTreino = i;
-                        break;
-                    }
-                }
 
-                if (indiceTreino != -1 && indiceTreino + 1 < dados.length) {
-                    String treino = dados[indiceTreino + 1].trim();
-
-                    // Ajustar o formato da data
-                    LocalDate dataMatricula = LocalDate.parse(dados[indiceTreino + 3].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
-                    int codigoProfessor = Integer.parseInt(dados[indiceTreino + 4].trim());
-                    boolean statusMatricula = Boolean.parseBoolean(dados[indiceTreino + 5].trim());
-
-                    Professor professor = repositorioProfessores.buscar(codigoProfessor);
-                    if (professor == null) {
-                        throw new IllegalArgumentException("Professor com código " + codigoProfessor + " não encontrado.");
-                    }
-
-                    return new Cliente(1, nome, telefone, email, cpf, endereco, idade, treino, dataMatricula, professor, statusMatricula);
-                } else {
-                    throw new IllegalArgumentException("Formato de linha inválido: " + linha);
-                }
-            } else {
-                throw new IllegalArgumentException("Formato de linha inválido: " + linha);
-            }
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException | DateTimeParseException e) {
-            throw new IllegalArgumentException("Erro ao converter dados da linha: " + linha, e);
-        }
-    }
 
 
 

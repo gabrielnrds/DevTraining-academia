@@ -1,8 +1,9 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Pessoa {
+public abstract class  Pessoa implements Serializable {
     private long id;
     private String nome;
     private String telefone;
