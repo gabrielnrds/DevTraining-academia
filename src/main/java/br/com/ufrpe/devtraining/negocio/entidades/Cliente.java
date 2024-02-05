@@ -9,9 +9,7 @@ import java.util.Objects;
 public class Cliente extends Pessoa
         implements Serializable {
 
-
-
-    private String treino;
+    private FichaTreino treino;
     private LocalDate dataMatricula;
     private Professor professor;
     private boolean statusMatricula;
@@ -20,21 +18,21 @@ public class Cliente extends Pessoa
 
     }
 
-    public Cliente(long id, String nome, String telefone, String email, String cpf, String endereco, int idade,
-                   String treino, LocalDate dataMatricula, Professor professor, Boolean statusMatricula) {
+    public Cliente(long id, String nome, String telefone, String email, String cpf, String endereco, int idade
+                   , Professor professor, Boolean statusMatricula) {
         super(id, nome, telefone, email, cpf, endereco, idade);
-        this.treino = treino;
-        this.dataMatricula = dataMatricula;
+        this.treino = null;
+        this.dataMatricula = LocalDate.now();
         this.professor = professor;
         this.statusMatricula = statusMatricula;
     }
 
 
-    public String getTreino() {
+    public FichaTreino getTreino() {
         return treino;
     }
 
-    public void setTreino(String treino) {
+    public void setTreino(FichaTreino treino) {
         this.treino = treino;
     }
 

@@ -21,9 +21,6 @@ public class Professor extends Pessoa
         this.salario = salario;
     }
 
-
-
-
     public int getIdDoProfessor(){
         return (int) getId();
     }
@@ -66,7 +63,6 @@ public class Professor extends Pessoa
                 && Objects.equals(turno, other.turno);
     }
 
-
     @Override
     public String toString() {
         return "Professor [turno=" + turno + ", salario=" + salario + "]";
@@ -79,8 +75,4 @@ public class Professor extends Pessoa
         System.out.println("Treino criado: " + treino1);
         scanner.close();
     }
-
-
-
-
 }
