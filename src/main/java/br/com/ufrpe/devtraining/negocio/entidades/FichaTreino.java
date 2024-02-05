@@ -1,11 +1,12 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-public class FichaTreino  {
+public class FichaTreino implements Serializable {
 
     private int idTreino;
     private Professor professor;

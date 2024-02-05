@@ -3,7 +3,9 @@ package br.com.ufrpe.devtraining.dados;
 
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 
-public class RepositorioUsuarios {
+import java.io.Serializable;
+
+public class RepositorioUsuarios implements Serializable {
     private Usuario[] usuariosRepositorio;
     private int proxima;
 
@@ -23,12 +25,12 @@ public class RepositorioUsuarios {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            int idUsuarioRepo = (int) this.usuariosRepositorio[i].getId_usuariosRepositorio();
-            if (idUsuario == idUsuarioRepo) {
+
+           // if (this.usuariosRepositorio[i].getId_usuariosRepositorio() == idUsuario) {
                 achou = true;
-            } else {
+         //   } else {
                 i = i + 1;
-            }
+          //  }
         }
 
         Usuario resultado = null;
@@ -43,12 +45,11 @@ public class RepositorioUsuarios {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            int idUsuarioRepo = (int)this.usuariosRepositorio[i].getId_usuariosRepositorio();
-            if (idUsuario == idUsuarioRepo) {
+           // if (idUsuario == this.usuariosRepositorio[i].getId_usuariosRepositorio()) {
                 achou = true;
-            } else {
+         //   } else {
                 i = i + 1;
-            }
+          //  }
         }
 
         if (i != this.proxima) {
