@@ -1,22 +1,15 @@
 package br.com.ufrpe.devtraining.dados;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+
 
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 
-public class RepositorioClientes {
+public class RepositorioClientes implements Serializable  {
+
     private Cliente[] clientes;
     private int proxima;
     private String arquivo = "clientes.txt";
@@ -34,23 +27,11 @@ public class RepositorioClientes {
 
         this.clientes[this.proxima] = cliente;
         this.proxima++;
-
-        if (this.proxima == this.clientes.length) {
-            this.duplicaArrayClientes();
-            salvarDados();
-        }
+        salvarDados();
     }
 
     private boolean existeClienteComCPF(String cpf) {
         return buscar(cpf) != null;
-    }
-
-    private void duplicaArrayClientes() {
-        if (this.clientes != null && this.clientes.length > 0) {
-            Cliente[] arrayDuplicado = new Cliente[this.clientes.length * 2];
-            System.arraycopy(this.clientes, 0, arrayDuplicado, 0, this.clientes.length);
-            this.clientes = arrayDuplicado;
-        }
     }
 
     public Cliente buscar(String cpf) {
@@ -71,7 +52,6 @@ public class RepositorioClientes {
     public void remover(String cpf) {
         int i = 0;
         boolean achou = false;
-
         while ((!achou) && (i < this.proxima)) {
             if (cpf.equals(this.clientes[i].getCpf())) {
                 achou = true;
@@ -115,16 +95,15 @@ public class RepositorioClientes {
     }
 
     void salvarDados() {
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo), StandardCharsets.UTF_8))) {
-            for (int i = 0; i < proxima; i++) {
-                writer.write(clientes[i].toFormattedString());
-                writer.newLine();
-            }
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+                new FileOutputStream(arquivo))) {
+            objectOutputStream.writeObject(clientes);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    // Carrega dados do arquivo usando serialização
     void carregarDados() {
         File file = new File(arquivo);
 
@@ -135,8 +114,17 @@ public class RepositorioClientes {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            return;
         }
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(
+                new FileInputStream(arquivo))) {
+            clientes = (Cliente[])  objectInputStream.readObject();
+            proxima = clientes.length;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     }
 
 
@@ -145,4 +133,3 @@ public class RepositorioClientes {
 
 
 
-}

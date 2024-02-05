@@ -1,11 +1,14 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa
+        implements Serializable {
+
 
 
     private String treino;
