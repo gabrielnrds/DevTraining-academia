@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public abstract class  Pessoa implements Serializable {
-    private long id;
+    private int id;
     private String nome;
     private String telefone;
     private String email;
@@ -14,7 +14,7 @@ public abstract class  Pessoa implements Serializable {
 
     public Pessoa() {}
 
-    public Pessoa(long id, String nome, String telefone, String email, String cpf, String endereco, int idade) {
+    public Pessoa(int id, String nome, String telefone, String email, String cpf, String endereco, int idade) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -24,11 +24,11 @@ public abstract class  Pessoa implements Serializable {
         this.idade = idade;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

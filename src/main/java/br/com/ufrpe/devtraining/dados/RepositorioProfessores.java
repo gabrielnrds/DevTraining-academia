@@ -17,7 +17,7 @@ public class RepositorioProfessores implements Serializable {
 
     // Método para cadastrar
     public void cadastrar(Professor professor) {
-        if (existeProfessorComId(professor.getIdDoProfessor())) {
+        if (existeProfessorComId(professor.getId())) {
             System.out.println("ID já existe. Não é possível cadastrar o professor.");
             return;
         }
@@ -38,7 +38,7 @@ public class RepositorioProfessores implements Serializable {
         int i = 0;
 
         while (i < this.proxima) {
-            if (id_professor==this.professores[i].getIdDoProfessor()) {
+            if (id_professor==this.professores[i].getId()) {
                 return this.professores[i];
             }
             i++;
@@ -51,7 +51,7 @@ public class RepositorioProfessores implements Serializable {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            if (id_professor == this.professores[i].getIdDoProfessor()) {
+            if (id_professor == this.professores[i].getId()) {
                 achou = true;
             } else {
                 i++;
@@ -76,7 +76,7 @@ public class RepositorioProfessores implements Serializable {
         boolean achou = false;
         // Procura o professor com o ID fornecido
         while ((!achou) && (i < this.proxima)) {
-            if (id_professor == this.professores[i].getIdDoProfessor()) {
+            if (id_professor == this.professores[i].getId()) {
                 achou = true;
             } else {
                 i++;

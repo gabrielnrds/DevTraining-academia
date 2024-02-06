@@ -107,7 +107,7 @@ public class Avaliacao {
         StringBuilder formattedString = new StringBuilder();
 
         formattedString.append(id_avaliacao).append(";")
-                .append(professor.getIdDoProfessor()).append(";")
+                .append(professor.getId()).append(";")
                 .append(cliente.getId()).append(";")
                 .append(dataHora).append(";")
                 .append(objetivo).append(";")

@@ -11,9 +11,6 @@ public class Professor extends Pessoa
     private String turno;
     private double salario;
 
-    public Professor(String wendell, String number, String mail, String id, int i, int i1, String manhã, int i2) {
-
-    }
 
     public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, int idade, String turno, double salario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
@@ -21,12 +18,6 @@ public class Professor extends Pessoa
         this.salario = salario;
     }
 
-
-
-
-    public int getIdDoProfessor(){
-        return (int) getId();
-    }
 
     public String getTurno() {
         return turno;

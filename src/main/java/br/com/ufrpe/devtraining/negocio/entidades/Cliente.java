@@ -16,11 +16,8 @@ public class Cliente extends Pessoa
     private Professor professor;
     private boolean statusMatricula;
 
-    public Cliente(String clienteTeste, String number, String mail, String s, int i, String ruaRobertinho, String treino, Object o, Professor professor1, boolean b) {
 
-    }
-
-    public Cliente(long id, String nome, String telefone, String email, String cpf, String endereco, int idade,
+    public Cliente(int id, String nome, String telefone, String email, String cpf, String endereco, int idade,
                    String treino, LocalDate dataMatricula, Professor professor, Boolean statusMatricula) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.treino = treino;
