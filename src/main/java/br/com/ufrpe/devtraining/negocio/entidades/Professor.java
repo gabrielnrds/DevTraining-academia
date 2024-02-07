@@ -15,7 +15,7 @@ public class Professor extends Pessoa
 
     }
 
-    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, int idade, String turno, double salario) {
+    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, String idade, String turno, double salario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.turno = turno;
         this.salario = salario;

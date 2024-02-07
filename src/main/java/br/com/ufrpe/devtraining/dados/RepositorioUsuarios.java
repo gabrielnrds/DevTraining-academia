@@ -20,25 +20,25 @@ public class RepositorioUsuarios implements Serializable {
         this.proxima = this.proxima + 1;
     }
 
-    // Buscar por idUsuario
-    public Usuario buscar(int idUsuario) {
-        int i = 0;
-        boolean achou = false;
-        while ((!achou) && (i < this.proxima)) {
-
-           // if (this.usuariosRepositorio[i].getId_usuariosRepositorio() == idUsuario) {
-                achou = true;
-         //   } else {
-                i = i + 1;
-          //  }
-        }
-
-        Usuario resultado = null;
-        if (i != this.proxima) {
-            resultado = this.usuariosRepositorio[i];
-        }
-        return resultado;
-    }
+//    // Buscar por idUsuario
+//    public Usuario buscar(int idUsuario) {
+//        int i = 0;
+//        boolean achou = false;
+//        while ((!achou) && (i < this.proxima)) {
+//
+//            //if (this.usuariosRepositorio[i].getId_usuariosRepositorio() == idUsuario) {
+//                achou = true;
+//            } else {
+//                i = i + 1;
+//            }
+//        }
+//
+//        Usuario resultado = null;
+//        if (i != this.proxima) {
+//            resultado = this.usuariosRepositorio[i];
+//        }
+//        return resultado;
+//    }
 
     // Remover
     public void remover(int idUsuario) {
@@ -84,5 +84,9 @@ public class RepositorioUsuarios implements Serializable {
         } else {
             System.out.println("Professor não encontrado.");
         }
+    }
+
+    public Usuario[] getUsuariosRepositorio() {
+        return usuariosRepositorio;
     }
 }

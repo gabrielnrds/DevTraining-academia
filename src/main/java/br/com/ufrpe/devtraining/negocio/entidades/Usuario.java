@@ -1,10 +1,14 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     private String nomeUsuario;
+    private String senha;
     public Usuario(int idUsuario, String nomeUsuario, String senha) {
         this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
     }
 
     public void login() {
@@ -22,5 +26,13 @@ public class Usuario {
 
     public Object getId_usuariosRepositorio() {
         return null;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
     }
 }

@@ -98,4 +98,8 @@ public class RepositorioTreinos implements Serializable {
             return;
         }
     }
+
+    public FichaTreino[] getFichasTreino() {
+        return fichasTreino;
+    }
 }

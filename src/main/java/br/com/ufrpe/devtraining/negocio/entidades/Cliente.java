@@ -9,6 +9,8 @@ import java.util.Objects;
 public class Cliente extends Pessoa
         implements Serializable {
 
+    private  Usuario usuario;
+
     private FichaTreino treino;
     private LocalDate dataMatricula;
     private Professor professor;
@@ -18,13 +20,14 @@ public class Cliente extends Pessoa
 
     }
 
-    public Cliente(long id, String nome, String telefone, String email, String cpf, String endereco, int idade
-                   , Professor professor, Boolean statusMatricula) {
+    public Cliente(int id, String nome, String telefone, String email, String cpf, String endereco, String idade
+                   , Professor professor, Boolean statusMatricula, Usuario usuario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.treino = null;
         this.dataMatricula = LocalDate.now();
         this.professor = professor;
         this.statusMatricula = statusMatricula;
+        this.usuario = usuario;
     }
 
 
@@ -92,4 +95,7 @@ public class Cliente extends Pessoa
                 this.getNome(), this.getCpf(), this.getTreino(), this.getDataMatricula(), this.getProfessor(), this.getStatusMatricula());
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
 }
