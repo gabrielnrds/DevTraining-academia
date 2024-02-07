@@ -25,18 +25,22 @@ public class RepositorioGeral implements Serializable {
     }
 
     public List<Usuario> getRepositorioUsuarios() {
+
         return repositorioUsuarios;
     }
 
     public RepositorioClientes getRepositorioClientes() {
+
         return repositorioClientes;
     }
 
     public RepositorioExercicios getRepositorioExercicios() {
+
         return repositorioExercicios;
     }
 
     public RepositorioTreinos getRepositorioTreinos() {
+
         return repositorioTreinos;
     }
 }
