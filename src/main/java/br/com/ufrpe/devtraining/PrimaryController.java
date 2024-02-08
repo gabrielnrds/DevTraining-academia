@@ -51,12 +51,13 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    void EntrarNaTelaMenu(ActionEvent event) {
+    void EntrarNaTelaMenu(ActionEvent event) throws IOException {
         for (Usuario usuario : Main.repositorioGeral.getRepositorioUsuarios()) {
             if (Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                 System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
+                Main.trocartela(new FXMLLoader(Main.class.getResource("TelaPrincipal.fxml")).load());
             } else {
                 exibirAlertaMensagem("Erro","Usuário não existe");
                 System.out.println("Usuário não existe");
