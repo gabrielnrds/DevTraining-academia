@@ -1,6 +1,7 @@
 package br.com.ufrpe.devtraining;
 
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
+import br.com.ufrpe.devtraining.negocio.entidades.Pessoa;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,9 +42,9 @@ public class CadastroControle implements Initializable {
 
         Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
         Main.repositorioGeral.getRepositorioUsuarios().add(usuario);
-        for (Cliente clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
+        for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
             if (clientes != null) {
-                System.out.println(clientes.getUsuario().getNomeUsuario());
+                System.out.println(cliente.getUsuario().getNomeUsuario());
             }
         }
         Main.trocartela(new FXMLLoader(Main.class.getResource("telainicial.fxml")).load());

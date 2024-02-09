@@ -2,13 +2,19 @@ package br.com.ufrpe.devtraining.negocio.entidades;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable {
+public class Usuario extends Pessoa
+        implements Serializable {
 
     private String nomeUsuario;
+    private int idUsuario;
     private String senha;
-    public Usuario(int idUsuario, String nomeUsuario, String senha) {
+    public Usuario(int id, String nomeUsuario, String senha) {
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
+        this.idUsuario= id;
+
+
+
     }
 
     public void login() {
@@ -28,11 +34,18 @@ public class Usuario implements Serializable {
         return null;
     }
 
+
+
     public String getNomeUsuario() {
         return nomeUsuario;
     }
 
     public String getSenha() {
         return senha;
+    }
+
+    @Override
+    public int getId() {
+        return idUsuario;
     }
 }
