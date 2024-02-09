@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="903.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <GridPane prefHeight="592.0" prefWidth="225.0" style="-fx-background-color: #685e57; -fx-opacity: #4d4640;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="180.66666793823242" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="44.0" minHeight="0.0" prefHeight="109.33333587646484" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="372.6666717529297" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="372.6666717529297" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="372.6666717529297" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btn_inicio" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Inicio" textFill="#4f4842" GridPane.halignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="#4f4842" size="30" text="" wrappingWidth="29.190471649169922" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <Button fx:id="btn_cadastros" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="232.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Cadastros" textFill="#4f4842" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btn_pagamentos" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Pagamentos" textFill="#4f4842" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btn_consulta" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Consulta" textFill="#4f4842" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btn_relatorios" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Relatórios" textFill="#4f4842" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btn_config" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Configurações" textFill="#4f4842" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="#4f4842" glyphName="USERS" size="30" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#4f4842" glyphName="MONEY" size="30" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#4f4842" glyphName="SEARCH" size="30" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#4f4842" glyphName="BARS" size="30" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#4f4842" glyphName="COG" size="30" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </FontAwesomeIconView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <ImageView blendMode="DIFFERENCE" cache="true" fitHeight="384.0" fitWidth="366.0" layoutX="-69.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-76.0">
+                     <image>
+                        <Image url="@../../../../imagens/17764451-logotipo-universal-em-preto-e-branco-com-a-imagem-de-um-esportista-bom-para-academia-vetor-removebg-preview.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.53" contrast="-0.41" hue="-0.28" saturation="-1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="1.0" />
+         </padding>
+      </GridPane>
+   </left>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <top>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="903.0" style="-fx-background-color: #f78120;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane alignment="BOTTOM_RIGHT" prefHeight="551.0" prefWidth="365.0" BorderPane.alignment="BOTTOM_LEFT">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btn_sair" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="SAIR" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="20.0" right="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Label contentDisplay="CENTER" text="telaRelatorios" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

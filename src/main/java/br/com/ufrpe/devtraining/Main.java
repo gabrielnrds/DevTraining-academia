@@ -20,13 +20,12 @@ public class Main extends Application {
         stage.setMinWidth(960);
         this.stage = stage;
         stage.setResizable(false);
-        FXMLLoader root = new FXMLLoader(Main.class.getResource("telainicial.fxml"));
+        FXMLLoader root = new FXMLLoader(Main.class.getResource("telaLogin.fxml"));
         Scene scene = new Scene(root.load());
 
         stage.setScene(scene);
         stage.setTitle("DevTraining");
         stage.show();
-
 
     }
     public static void trocartela(Parent janela) {
