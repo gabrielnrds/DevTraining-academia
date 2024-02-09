@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
+import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 
 public class RepositorioClientes implements Serializable  {
 
@@ -125,7 +126,23 @@ public class RepositorioClientes implements Serializable  {
             e.printStackTrace();
         }
     }
+
+    public Cliente[] getClientes() {
+        return clientes;
     }
+
+    public Cliente clienteUsuario(Usuario usuario){
+
+        for(Cliente cliente:clientes){
+            if (cliente.getUsuario().equals(usuario.getNomeUsuario())){
+                return cliente;
+            }
+
+        }
+        return  null;
+
+    }
+}
 
 
 

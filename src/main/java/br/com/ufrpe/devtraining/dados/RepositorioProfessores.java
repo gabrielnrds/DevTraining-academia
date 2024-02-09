@@ -10,8 +10,8 @@ public class RepositorioProfessores implements Serializable {
     private int proxima;
     private String arquivo = "professores.txt";
 
-    public RepositorioProfessores(int tamanho) {
-        this.professores = new Professor[tamanho];
+    public RepositorioProfessores(int tamnho) {
+        this.professores = new Professor[tamnho];
         this.proxima = 0;
     }
 
@@ -123,6 +123,10 @@ public class RepositorioProfessores implements Serializable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public Professor[] getProfessores() {
+        return professores;
     }
 }
 

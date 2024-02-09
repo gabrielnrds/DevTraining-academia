@@ -51,4 +51,7 @@ public class RepositorioExercicios {
         }
     }
 
+    public Exercicio[] getExercicios() {
+        return exercicios;
+    }
 }

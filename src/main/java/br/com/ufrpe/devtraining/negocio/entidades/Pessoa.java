@@ -10,11 +10,11 @@ public abstract class  Pessoa implements Serializable {
     private String email;
     private String cpf;
     private String endereco;
-    private int idade;
+    private String idade;
 
     public Pessoa() {}
 
-    public Pessoa(int id, String nome, String telefone, String email, String cpf, String endereco, int idade) {
+    public Pessoa(int id, String nome, String telefone, String email, String cpf, String endereco, String idade) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -71,11 +71,11 @@ public abstract class  Pessoa implements Serializable {
         this.cpf = cpf;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
