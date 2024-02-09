@@ -47,15 +47,13 @@ public class CadastroControle implements Initializable {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
             }
         }
-        Main.trocartela(new FXMLLoader(Main.class.getResource("telainicial.fxml")).load());
+        Main.trocartela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         }
-
-
     }
 
 

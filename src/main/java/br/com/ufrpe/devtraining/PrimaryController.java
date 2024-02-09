@@ -57,7 +57,7 @@ public class PrimaryController implements Initializable {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                 System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
-                Main.trocartela(new FXMLLoader(Main.class.getResource("TelaPrincipal.fxml")).load());
+                Main.trocartela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
             } else {
                 exibirAlertaMensagem("Erro","Usuário não existe");
                 System.out.println("Usuário não existe");
@@ -79,7 +79,6 @@ public class PrimaryController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Usuario usuario = new Usuario(00,"vini","123");
         Main.repositorioGeral.getRepositorioUsuarios().add(usuario);
-
 
     }
 
