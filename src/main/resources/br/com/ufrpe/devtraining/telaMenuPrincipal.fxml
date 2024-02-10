@@ -16,7 +16,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="903.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="903.0" style="-fx-background-color: #4f4842;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.ufrpe.devtraining.MenuController">
    <left>
       <GridPane prefHeight="592.0" prefWidth="225.0" style="-fx-background-color: #685e57; -fx-opacity: #4d4640;" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -65,7 +67,7 @@
                   <Insets left="60.0" />
                </padding>
             </Button>
-            <Button fx:id="btn_pagamentos" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Pagamentos" textFill="#4f4842" GridPane.rowIndex="2">
+            <Button fx:id="btn_pagamentos" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Pagamentos" textFill="#4f4842" GridPane.rowIndex="2" onAction="#IrParaTelaPagamentos">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -79,6 +81,7 @@
                   <Insets left="60.0" />
                </padding>
             </Button>
+
             <Button fx:id="btn_consulta" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: #f78120; -fx-background-radius: 0;" text="Consulta" textFill="#4f4842" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -233,7 +236,7 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="btn_sair" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="SAIR" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+            <Button fx:id="btn_sair" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="SAIR" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" onAction="#VoltarTelaLogin">
                <GridPane.margin>
                   <Insets bottom="20.0" right="20.0" />
                </GridPane.margin>
@@ -241,6 +244,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
+
          </children>
          <BorderPane.margin>
             <Insets left="20.0" />
