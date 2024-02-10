@@ -47,7 +47,7 @@ public class PrimaryController implements Initializable {
     private static Pessoa pessoa;
 
     @FXML
-    void EntrarSegundaTela(ActionEvent event) throws IOException {
+    void EntrarTelaCadastro(ActionEvent event) throws IOException {
         Main.trocartela(new FXMLLoader(Main.class.getResource("TelaCadastro.fxml")).load());
     }
     @FXML

@@ -16,7 +16,7 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="BtnRegistro" layoutX="586.0" layoutY="419.0" mnemonicParsing="false" onAction="#EntrarSegundaTela" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #f78120;" text="Registrar-se">
+      <Button fx:id="BtnRegistro" layoutX="586.0" layoutY="419.0" mnemonicParsing="false" onAction="#EntrarTelaCadastro" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #f78120;" text="Registrar-se">
          <font>
             <Font size="20.0" />
          </font>
