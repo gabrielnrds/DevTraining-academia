@@ -45,11 +45,11 @@ public class RepositorioUsuarios implements Serializable {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-           // if (idUsuario == this.usuariosRepositorio[i].getId_usuariosRepositorio()) {
-                achou = true;
-         //   } else {
-                i = i + 1;
-          //  }
+            // if (idUsuario == this.usuariosRepositorio[i].getId_usuariosRepositorio()) {
+            achou = true;
+            //   } else {
+            i = i + 1;
+            //  }
         }
 
         if (i != this.proxima) {

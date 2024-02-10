@@ -134,10 +134,11 @@ public class RepositorioClientes implements Serializable  {
     public Cliente clienteUsuario(Usuario usuario){
 
         for(Cliente cliente:clientes){
-            if (cliente.getUsuario().equals(usuario.getNomeUsuario())){
-                return cliente;
+            if (cliente != null) {
+                if (cliente.getUsuario().getNomeUsuario().equals(usuario.getNomeUsuario())) {
+                    return cliente;
+                }
             }
-
         }
         return  null;
 

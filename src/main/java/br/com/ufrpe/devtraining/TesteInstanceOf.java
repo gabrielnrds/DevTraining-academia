@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 
 import static br.com.ufrpe.devtraining.PrimaryController.getPessoa;
 
-public class TESTECARALHO implements Initializable {
+public class TesteInstanceOf implements Initializable {
 
     @FXML
     private Text txtAdmin;

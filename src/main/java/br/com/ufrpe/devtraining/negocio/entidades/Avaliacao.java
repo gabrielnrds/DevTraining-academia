@@ -35,7 +35,7 @@ public class Avaliacao {
     }
 
     //calcularIMC
-    
+
 
     //imprimir avaliação
     public String toString() {
@@ -70,7 +70,7 @@ public class Avaliacao {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
-    
+
 
     public void setImc(double imc) {
         this.imc = imc;
@@ -97,7 +97,7 @@ public class Avaliacao {
         return this.objetivo;
     }
 
-    
+
 
     public double getImc() {
         return this.imc;

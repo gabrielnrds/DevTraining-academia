@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.TesteInstanceOf">
+   <children>
+      <Text fx:id="txtCliente" layoutX="457.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" />
+      <Text fx:id="txtProf" layoutX="457.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" />
+      <Text fx:id="txtAdmin" layoutX="457.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" />
+   </children>
+</AnchorPane>

@@ -21,7 +21,7 @@ public class Cliente extends Pessoa
     }
 
     public Cliente(int id, String nome, String telefone, String email, String cpf, String endereco, String idade
-                   , Professor professor, Boolean statusMatricula, Usuario usuario) {
+            , Professor professor, Boolean statusMatricula, Usuario usuario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.treino = null;
         this.dataMatricula = LocalDate.now();
