@@ -3,6 +3,7 @@ package br.com.ufrpe.devtraining.negocio.entidades;
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
+    private static final long serialVersionUID = 6390020522360302272L;
 
     private String nomeUsuario;
     private int idUsuario;
@@ -28,11 +29,6 @@ public class Usuario implements Serializable {
         this.nomeUsuario = novoNomeUsuario;
         System.out.println("Login alterado para: " + nomeUsuario);//coloquei, mas talvez seja inútil.3
     }
-
-    public Object getId_usuariosRepositorio() {
-        return null;
-    }
-
 
 
     public String getNomeUsuario() {
