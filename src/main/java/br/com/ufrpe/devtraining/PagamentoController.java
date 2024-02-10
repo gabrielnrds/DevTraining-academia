@@ -23,7 +23,7 @@ public class PagamentoController {
     private Button BtnVoltarCatraca;
 
     @FXML
-    void VoltarTelaLoginCatraca(ActionEvent event) throws IOException {
+    void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocartela(new FXMLLoader(Main.class.getResource("telaMenuPrincipal.fxml")).load());
     }
 

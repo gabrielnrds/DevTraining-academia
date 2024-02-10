@@ -49,10 +49,16 @@ public class MenuController implements Initializable {
         Main.trocartela(new FXMLLoader(Main.class.getResource("telaPagamentos.fxml")).load());
     }
 
+    @FXML
+    void TelaCadastro(ActionEvent event) throws IOException {
+        Main.trocartela(new FXMLLoader(Main.class.getResource("TelaCadastroMenu.fxml")).load());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+    @FXML
     void LiberarCatracaMenu(ActionEvent event) {
         // Exibir um alerta de catraca liberada
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
