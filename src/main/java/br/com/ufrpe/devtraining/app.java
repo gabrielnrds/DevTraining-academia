@@ -16,7 +16,7 @@ public class app {
 //        ficha.adicionarExercicio(new Exercicio("Leg Press", 3, 12));
 //        ficha.adicionarExercicio(new Exercicio("Agachamento", 3, 12));
 //        ficha.adicionarExercicio(new Exercicio("Panturrilha", 4, 14));
-//        ficha.adicionarExercicio(new Exercicio("Extensora", 3, 12));
+//        ficha.adicionarExercicio(new Exercicio("Extensora", 4, 12));
 //
 //        System.out.println(ficha.toString());
 //    }
