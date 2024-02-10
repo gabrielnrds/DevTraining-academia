@@ -23,7 +23,7 @@ public class RepositorioProfessores implements Serializable {
         }
         this.professores[this.proxima] = professor;
         this.proxima++;
-        salvarDados();
+
 
     }
 
@@ -62,7 +62,7 @@ public class RepositorioProfessores implements Serializable {
             this.professores[i] = this.professores[this.proxima - 1];
             this.professores[this.proxima - 1] = null;
             this.proxima--;
-            salvarDados();
+            //salvarDados();
 
             System.out.println("Professor " + id_professor + " removido com sucesso.");
         } else {
@@ -91,39 +91,9 @@ public class RepositorioProfessores implements Serializable {
         } else {
             System.out.println("Professor não encontrado.");
         }
-        salvarDados();
-    }
-    void salvarDados() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(arquivo))) {
-            objectOutputStream.writeObject(professores);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
-    // Carrega dados do arquivo usando serialização
-    void carregarDados() {
-        File file = new File(arquivo);
-
-        if (!file.exists()) {
-            System.out.println("Arquivo não encontrado. Criando um novo arquivo.");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return;
-        }
-
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream(arquivo))) {
-            professores = (Professor[]) objectInputStream.readObject();
-            proxima = professores.length;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public Professor[] getProfessores() {
         return professores;

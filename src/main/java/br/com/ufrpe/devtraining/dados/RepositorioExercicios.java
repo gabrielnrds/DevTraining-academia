@@ -2,7 +2,9 @@ package br.com.ufrpe.devtraining.dados;
 
 import br.com.ufrpe.devtraining.negocio.entidades.Exercicio;
 
-public class RepositorioExercicios {
+import java.io.Serializable;
+
+public class RepositorioExercicios implements Serializable {
     private Exercicio[] exercicios;
     private int proxima;
     public RepositorioExercicios(int tamanho) {

@@ -28,7 +28,7 @@ public class RepositorioClientes implements Serializable  {
 
         this.clientes[this.proxima] = cliente;
         this.proxima++;
-        salvarDados();
+
     }
 
     private boolean existeClienteComCPF(String cpf) {
@@ -92,7 +92,7 @@ public class RepositorioClientes implements Serializable  {
             System.out.println("Cliente não encontrado.");
         }
 
-        salvarDados();
+        //salvarDados();
     }
 
     void salvarDados() {
@@ -104,28 +104,6 @@ public class RepositorioClientes implements Serializable  {
         }
     }
 
-    // Carrega dados do arquivo usando serialização
-    void carregarDados() {
-        File file = new File(arquivo);
-
-        if (!file.exists()) {
-            System.out.println("Arquivo não encontrado. Criando um novo arquivo.");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return;
-        }
-
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream(arquivo))) {
-            clientes = (Cliente[])  objectInputStream.readObject();
-            proxima = clientes.length;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public Cliente[] getClientes() {
         return clientes;

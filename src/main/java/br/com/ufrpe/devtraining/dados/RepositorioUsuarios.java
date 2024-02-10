@@ -1,7 +1,6 @@
 package br.com.ufrpe.devtraining.dados;
 
 
-import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 
 import java.io.*;
@@ -21,7 +20,7 @@ public class RepositorioUsuarios implements Serializable {
     public void cadastrar(Usuario usuario) {
         this.usuariosRepositorio[this.proxima] = usuario;
         this.proxima = this.proxima + 1;
-        salvarDados();
+
     }
 
     // Buscar por idUsuario
@@ -29,7 +28,7 @@ public class RepositorioUsuarios implements Serializable {
         int i = 0;
 
         while (i < this.proxima) {
-            if (id_Usuario==this.usuariosRepositorio[i].getId()) {
+            if (id_Usuario==this.usuariosRepositorio[i].getIdUsuario()) {
                 return this.usuariosRepositorio[i];
             }
             i++;
@@ -42,7 +41,7 @@ public class RepositorioUsuarios implements Serializable {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            if (id_Usuario == this.usuariosRepositorio[i].getId()) {
+            if (id_Usuario == this.usuariosRepositorio[i].getIdUsuario()) {
                 achou = true;
             } else {
                 i = i + 1;
@@ -57,7 +56,7 @@ public class RepositorioUsuarios implements Serializable {
         } else {
             System.out.println("Avaliação não existe.");
         }
-        salvarDados();
+
     }
 
     // Alterar
@@ -68,7 +67,7 @@ public class RepositorioUsuarios implements Serializable {
         // Procura o usuário com o ID fornecido
         while ((!achou) && (i < this.proxima)) {
 
-            if (id_Usuario == this.usuariosRepositorio[i].getId()) {
+            if (id_Usuario == this.usuariosRepositorio[i].getIdUsuario()) {
                 achou = true;
             } else {
                 i = i + 1;
@@ -82,44 +81,18 @@ public class RepositorioUsuarios implements Serializable {
         } else {
             System.out.println("Professor não encontrado.");
         }
-        salvarDados();
-    }
 
-    void salvarDados() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(arquivo))) {
-            objectOutputStream.writeObject(usuariosRepositorio);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Carrega dados do arquivo usando serialização
-    void carregarDados() {
-        File file = new File(arquivo);
-
-        if (!file.exists()) {
-            System.out.println("Arquivo não encontrado. Criando um novo arquivo.");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return;
-        }
-
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream(arquivo))) {
-            usuariosRepositorio = (Usuario[])  objectInputStream.readObject();
-            proxima = usuariosRepositorio.length;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
 
 
-    public Usuario[] getUsuariosRepositorio() {
+
+
+    public void setUsuariosRepositorio(Usuario[] usuariosRepositorio) {
+        this.usuariosRepositorio = usuariosRepositorio;
+    }
+
+    public Usuario[] getUsuarioRepositorio() {
         return usuariosRepositorio;
     }
 }

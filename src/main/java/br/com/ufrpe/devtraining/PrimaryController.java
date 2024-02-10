@@ -47,23 +47,30 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void EntrarSegundaTela(ActionEvent event) throws IOException {
-        Main.trocartela(new FXMLLoader(Main.class.getResource("TelaCadastro.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastro.fxml")).load());
     }
 
     @FXML
     void EntrarNaTelaMenu(ActionEvent event) throws IOException {
-        for (Usuario usuario : Main.repositorioGeral.getRepositorioUsuarios()) {
+        boolean usuarioEncontrado = false;
+
+        for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
             if (Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                 System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
-                Main.trocartela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
-            } else {
-                exibirAlertaMensagem("Erro","Usuário não existe");
-                System.out.println("Usuário não existe");
+                usuarioEncontrado = true;
+                Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
+                break;
             }
         }
+
+        if (!usuarioEncontrado) {
+            exibirAlertaMensagem("Erro", "Usuário não existe");
+            System.out.println("Usuário não existe");
+        }
     }
+
 
 
 
@@ -78,7 +85,7 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Usuario usuario = new Usuario(00,"vini","123");
-        Main.repositorioGeral.getRepositorioUsuarios().add(usuario);
+        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
 
     }
 

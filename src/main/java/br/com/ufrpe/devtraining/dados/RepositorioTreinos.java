@@ -51,7 +51,7 @@ public class RepositorioTreinos implements Serializable {
         } else {
             System.out.println("Ficha de treino não encontrada.");
         }
-        salvarDados();
+
     }
 
     public void alterar(int idTreino, FichaTreino novaFichaTreino) {
@@ -72,32 +72,11 @@ public class RepositorioTreinos implements Serializable {
         } else {
             System.out.println("Ficha de treino não encontrada. Não foi possível realizar a alteração.");
         }
-        salvarDados();
+
     }
 
-    void salvarDados() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(arquivo))) {
-            objectOutputStream.writeObject(fichasTreino);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    // Carrega dados do arquivo usando serialização
-    void carregarDados() {
-        File file = new File(arquivo);
 
-        if (!file.exists()) {
-            System.out.println("Arquivo não encontrado. Criando um novo arquivo.");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return;
-        }
-    }
 
     public FichaTreino[] getFichasTreino() {
         return fichasTreino;

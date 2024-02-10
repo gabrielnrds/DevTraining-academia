@@ -41,13 +41,13 @@ public class CadastroControle implements Initializable {
 
 
         Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
-        Main.repositorioGeral.getRepositorioUsuarios().add(usuario);
+        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
         for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
             if (clientes != null) {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
             }
         }
-        Main.trocartela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
 
     @Override
