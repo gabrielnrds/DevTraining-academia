@@ -3,7 +3,9 @@ package br.com.ufrpe.devtraining.dados;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
+import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 
 public class RepositorioProfessores implements Serializable {
     private Professor[]professores ;
@@ -124,7 +126,18 @@ public class RepositorioProfessores implements Serializable {
             e.printStackTrace();
         }
     }
+    public Professor professor(Usuario usuario){
 
+        for(Professor professor:professores){
+            if (professor != null) {
+                if (professor.getUsuario().getNomeUsuario().equals(usuario.getNomeUsuario())) {
+                    return professor;
+                }
+            }
+        }
+        return  null;
+
+    }
     public Professor[] getProfessores() {
         return professores;
     }
