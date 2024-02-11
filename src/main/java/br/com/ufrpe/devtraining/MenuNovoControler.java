@@ -26,7 +26,7 @@ public class MenuNovoControler implements Initializable {
     private Button BtnVoltarLogin;
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
-        Main.trocartela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
     @FXML
     void LiberarCatraca(ActionEvent event) throws IOException {
@@ -40,11 +40,11 @@ public class MenuNovoControler implements Initializable {
 
     @FXML
     void TelaCadastro(ActionEvent event) throws IOException {
-        Main.trocartela(new FXMLLoader(Main.class.getResource("TelaCadastroMenu.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroMenu.fxml")).load());
     }
     @FXML
     void TelaPagamentos(ActionEvent event) throws IOException {
-        Main.trocartela(new FXMLLoader(Main.class.getResource("telaPagamentos.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaPagamentos.fxml")).load());
     }
 
     @Override

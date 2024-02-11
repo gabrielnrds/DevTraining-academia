@@ -46,7 +46,7 @@ public class PrimaryController implements Initializable {
     private static Cliente clienteLogado;
 
     @FXML
-    void EntrarSegundaTela(ActionEvent event) throws IOException {
+    void EntrarTelaCadastro(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastro.fxml")).load());
     }
 
@@ -58,7 +58,9 @@ public class PrimaryController implements Initializable {
             if (Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
-                System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
+                if (getClienteLogado() != null) {
+                    System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
+                }
                 usuarioEncontrado = true;
                 Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
                 break;

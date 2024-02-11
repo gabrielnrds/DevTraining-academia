@@ -31,7 +31,7 @@ public class CadastroMenuControle {
 
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
-        Main.trocartela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
     }
 
 }
