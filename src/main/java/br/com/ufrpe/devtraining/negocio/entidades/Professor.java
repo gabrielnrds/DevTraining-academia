@@ -10,12 +10,14 @@ public class Professor extends Pessoa
 
     private String turno;
     private double salario;
+    private Usuario usuario;
 
 
-    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, String idade, String turno, double salario) {
+    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, String idade, String turno, double salario, Usuario usuario) {
         super(id, nome, telefone, email, cpf, endereco, idade);
         this.turno = turno;
         this.salario = salario;
+        this.usuario = usuario;
     }
 
     public int getIdDoProfessor(){
@@ -71,5 +73,9 @@ public class Professor extends Pessoa
         String treino1 = scanner.nextLine();
         System.out.println("Treino criado: " + treino1);
         scanner.close();
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
     }
 }

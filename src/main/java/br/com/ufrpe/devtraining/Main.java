@@ -27,7 +27,7 @@ public class Main extends Application {
         stage.setMinHeight(600);
         stage.setMinWidth(960);
         this.stage = stage;
-        stage.setResizable(false);
+        stage.setResizable(true);
         FXMLLoader root = new FXMLLoader(Main.class.getResource("telaLogin.fxml"));
         Scene scene = new Scene(root.load());
 
