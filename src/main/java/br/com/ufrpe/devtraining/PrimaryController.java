@@ -55,7 +55,7 @@ public class PrimaryController implements Initializable {
         boolean usuarioEncontrado = false;
 
         for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
-            if (Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
+            if (usuario != null && Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                 System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
@@ -63,7 +63,8 @@ public class PrimaryController implements Initializable {
                 Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
                 break;
             }
-        }
+
+    }
 
         if (!usuarioEncontrado) {
             exibirAlertaMensagem("Erro", "Usuário não existe");

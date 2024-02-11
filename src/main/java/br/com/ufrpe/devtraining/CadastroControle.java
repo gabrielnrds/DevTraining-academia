@@ -39,7 +39,6 @@ public class CadastroControle implements Initializable {
         Usuario usuario = new Usuario(0,txtNome.getText(),txtSenha.getText());
         Cliente cliente = new Cliente(0,txtNome.getText(),"4",txtEmail.getText(),txtCpf.getText(),"rua",txtIdade.getText(),null,true,usuario);
 
-
         Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
         for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
