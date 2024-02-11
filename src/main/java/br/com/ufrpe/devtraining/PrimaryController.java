@@ -62,8 +62,11 @@ public class PrimaryController implements Initializable {
                     System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
                 }
                 usuarioEncontrado = true;
-                Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuPrincipal.fxml")).load());
+                Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+                //Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
                 break;
+
+
             }
         }
 
