@@ -65,7 +65,7 @@ public class PrimaryController implements Initializable {
                     }
                 }
                 usuarioEncontrado = true;
-                Main.trocartela(new FXMLLoader(Main.class.getResource("telaMenuPrincipal.fxml")).load());
+                Main.trocartela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
                 break;
             }
         }
