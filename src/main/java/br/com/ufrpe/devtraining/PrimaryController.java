@@ -66,7 +66,7 @@ public class PrimaryController implements Initializable {
         }
 
         if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário não existe");
+            exibirAlertaMensagem("Erro", "Usuário não existe!");
             System.out.println("Usuário não existe");
         }
     }
