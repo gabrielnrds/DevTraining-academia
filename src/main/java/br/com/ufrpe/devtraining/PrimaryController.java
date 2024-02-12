@@ -52,10 +52,21 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void EntrarNaTelaMenu(ActionEvent event) throws IOException {
+        String nomeUsuario = Texto1.getText();
+        String senhaUsuario = TextoSenha.getText();
+
+        // Verifica se os campos de texto estão vazios
+        if (nomeUsuario.isEmpty() || senhaUsuario.isEmpty()) {
+            exibirAlertaMensagem("Erro", "Por favor, preencha todos os campos.");
+            return; // Encerra o método, pois os campos estão vazios
+        }
+
         boolean usuarioEncontrado = false;
 
+        // Percorre os usuários no repositório
         for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
-            if (Texto1.getText().equals(usuario.getNomeUsuario()) && TextoSenha.getText().equals(usuario.getSenha())) {
+            // Verifica se o nome de usuário e senha correspondem a algum usuário
+            if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
                 System.out.println("Usuário existe");
                 clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                 if (getClienteLogado() != null) {
@@ -63,13 +74,12 @@ public class PrimaryController implements Initializable {
                 }
                 usuarioEncontrado = true;
                 Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
-                //Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
+                // Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
                 break;
-
-
             }
         }
 
+        // Se o usuário não foi encontrado, exibe mensagem de erro
         if (!usuarioEncontrado) {
             exibirAlertaMensagem("Erro", "Usuário não existe!");
             System.out.println("Usuário não existe");
