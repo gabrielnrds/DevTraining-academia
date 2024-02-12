@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
+import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,37 +56,35 @@ public class PrimaryController implements Initializable {
         String nomeUsuario = Texto1.getText();
         String senhaUsuario = TextoSenha.getText();
 
-        // Verifica se os campos de texto estão vazios
-        if (nomeUsuario.isEmpty() || senhaUsuario.isEmpty()) {
-            exibirAlertaMensagem("Erro", "Por favor, preencha todos os campos.");
-            return; // Encerra o método, pois os campos estão vazios
-        }
-
         boolean usuarioEncontrado = false;
 
         // Percorre os usuários no repositório
         for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
-            // Verifica se o nome de usuário e senha correspondem a algum usuário
-            if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
-                System.out.println("Usuário existe");
-                clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
-                if (getClienteLogado() != null) {
-                    System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
+            // Verifica se o usuário atual não é nulo antes de acessar seus atributos
+            if (usuario != null) {
+                if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
+
+                    exibirAlertaMensagem("Sucesso", "Usuário encontrado!");
+                    // Define o cliente logado
+                    clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
+                    if (getClienteLogado() != null) {
+                        System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
+                    }
+
+                    usuarioEncontrado = true;
+                    Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+                    // Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
+                    break;
                 }
-                usuarioEncontrado = true;
-                Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
-                // Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
-                break;
             }
         }
 
-        // Se o usuário não foi encontrado, exibe mensagem de erro
+        System.out.println("Usuário encontrado? " + usuarioEncontrado);
+
         if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário não existe!");
-            System.out.println("Usuário não existe");
+            exibirAlertaMensagem("Erro", "Usuário não encontrado!");
         }
     }
-
 
 
 
@@ -97,6 +96,7 @@ public class PrimaryController implements Initializable {
 
         alerta.showAndWait();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Usuario usuario = new Usuario(00,"vini","123");

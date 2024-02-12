@@ -66,7 +66,7 @@ public class RepositorioClientes implements Serializable  {
             this.clientes[this.proxima - 1] = null;
             this.proxima--;
 
-            salvarDados();
+
             System.out.println("Cliente " + cpf + " removido com sucesso.");
         } else {
             System.out.println("Cliente não encontrado.");
@@ -92,17 +92,9 @@ public class RepositorioClientes implements Serializable  {
             System.out.println("Cliente não encontrado.");
         }
 
-        //salvarDados();
+
     }
 
-    void salvarDados() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(arquivo))) {
-            objectOutputStream.writeObject(clientes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     public Cliente[] getClientes() {
