@@ -10,13 +10,13 @@ import java.io.IOException;
 public class CadastroMenuControle {
 
     @FXML
+    private Button BtnCadastroAluno;
+
+    @FXML
     private Button BtnDinheiro;
 
     @FXML
     private Button BtnDinheiro1;
-
-    @FXML
-    private Button BtnDinheiro2;
 
     @FXML
     private Button BtnDinheiro3;
