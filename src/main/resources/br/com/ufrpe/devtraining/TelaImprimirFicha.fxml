@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.ImpriFichaController">
+   <children>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="7.0" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="7.0">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="BtnVoltarFicha" layoutX="40.0" layoutY="90.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f78120;">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fx:id="TextoVoltarFicha" layoutX="46.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLTAR">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TxtProcurarAluno" layoutX="250.0" layoutY="178.0" prefHeight="27.0" prefWidth="462.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="414.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seu nome:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -47,10 +47,16 @@ public class MenuNovoControler implements Initializable {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaPagamentos.fxml")).load());
     }
 
+    @FXML
+    void TelaImprimirFicha(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
 }
 
 
