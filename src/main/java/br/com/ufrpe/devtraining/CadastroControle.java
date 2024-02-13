@@ -19,7 +19,8 @@ public class CadastroControle implements Initializable {
 
     @FXML
     private Button BTNCasdastrar;
-
+    @FXML
+    private Button BtnVoltarCadastro;
     @FXML
     private TextField txtCpf;
 
@@ -47,12 +48,14 @@ public class CadastroControle implements Initializable {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
             }
         }
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
     }
-
+    @FXML
+    void VoltarTelaMenu(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         }
     }
 

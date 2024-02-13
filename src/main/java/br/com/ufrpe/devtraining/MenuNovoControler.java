@@ -27,7 +27,7 @@ public class MenuNovoControler implements Initializable {
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
-    }
+    } // Volta pra tela de login
     @FXML
     void LiberarCatraca(ActionEvent event) throws IOException {
         // Exibir um alerta de catraca liberada

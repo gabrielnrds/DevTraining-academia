@@ -12,6 +12,9 @@ import java.io.IOException;
 public class ImpriFichaController {
 
     @FXML
+    private Button BtnImprimirTreino;
+    
+    @FXML
     private Text TextoVoltarFicha;
 
     @FXML
