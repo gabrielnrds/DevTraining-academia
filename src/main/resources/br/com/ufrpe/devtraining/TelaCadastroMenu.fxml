@@ -29,20 +29,10 @@
             </Label>
          </children>
       </HBox>
-      <ImageView fitHeight="124.0" fitWidth="125.0" layoutX="180.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/2188735.png" />
-         </image>
-      </ImageView>
-      <Text fill="WHITE" layoutX="176.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PLANO" wrappingWidth="117.59999999999997">
+      <Text fill="WHITE" layoutX="176.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PLANO" wrappingWidth="117.59999999999997">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <ImageView fitHeight="124.0" fitWidth="125.0" layoutX="614.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/6904074.png" />
-         </image>
-      </ImageView>
       <Text fill="WHITE" layoutX="617.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR ALUNO" wrappingWidth="117.59999999999997">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -58,5 +48,15 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
+      <ImageView fitHeight="124.0" fitWidth="125.0" layoutX="173.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/2188735.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="125.0" layoutX="614.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/6904074.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
