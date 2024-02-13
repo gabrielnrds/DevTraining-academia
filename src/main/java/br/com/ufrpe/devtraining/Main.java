@@ -3,6 +3,7 @@ package br.com.ufrpe.devtraining;
 
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.dados.SaveManager;
+import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class Main extends Application {
     public static RepositorioGeral repositorioGeral;
     public static Stage stage;
+    public static Usuario usuarioLogado;
 
     @Override
     public void start(Stage stage) throws IOException {

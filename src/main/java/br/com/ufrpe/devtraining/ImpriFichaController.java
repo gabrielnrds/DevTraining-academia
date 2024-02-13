@@ -70,11 +70,6 @@ public class ImpriFichaController {
         }
     }
 
-
-
-
-
-
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle(titulo);
