@@ -38,7 +38,6 @@ public class Main extends Application {
 
     @Override
     public void stop() throws Exception {
-        // Salve os dados ao fechar o aplicativo
         SaveManager saveManager = new SaveManager(repositorioGeral);
         saveManager.salvar();
         super.stop();
