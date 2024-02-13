@@ -4,11 +4,14 @@ package br.com.ufrpe.devtraining.dados;
 import java.io.Serializable;
 
 public class Save implements Serializable {
+    private static final long serialVersionUID = -7208402854831694613L; // Atualizado para corresponder ao valor atual
+
     private RepositorioClientes repCliente;
     private RepositorioExercicios repExercicio;
     private RepositorioUsuarios repUsuario;
     private RepositorioTreinos repTreino;
     private RepositorioProfessores repProfessor;
+
 
     public Save(RepositorioClientes repositorioClientes, RepositorioExercicios repositorioExercicios, RepositorioUsuarios repositorioUsuarios, RepositorioTreinos repositorioTreinos, RepositorioProfessores repositorioProfessores) {
         this.repCliente = repositorioClientes;
@@ -16,6 +19,7 @@ public class Save implements Serializable {
         this.repUsuario = repositorioUsuarios;
         this.repTreino = repositorioTreinos;
         this.repProfessor = repositorioProfessores;
+
     }
 
     public RepositorioClientes getRepCliente() {
@@ -38,3 +42,4 @@ public class Save implements Serializable {
         return repProfessor;
     }
 }
+

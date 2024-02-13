@@ -15,9 +15,11 @@ public class RepositorioClientes implements Serializable  {
     private int proxima;
 
 
+
     public RepositorioClientes(int tamanho) {
         this.clientes = new Cliente[tamanho];
         this.proxima = 0;
+
     }
 
     public void cadastrar(Cliente cliente) {
@@ -25,6 +27,7 @@ public class RepositorioClientes implements Serializable  {
             System.out.println("CPF já existe. Não é possível cadastrar o cliente.");
             return;
         }
+
 
         this.clientes[this.proxima] = cliente;
         this.proxima++;
@@ -109,6 +112,7 @@ public class RepositorioClientes implements Serializable  {
         }
         return null;
     }
+
 
 }
 

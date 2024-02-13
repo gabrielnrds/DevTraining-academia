@@ -96,7 +96,7 @@ public class PrimaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Usuario usuario = new Usuario(00,"vini","123");
+        Usuario usuario = new Usuario("vini","123");
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
 
     }

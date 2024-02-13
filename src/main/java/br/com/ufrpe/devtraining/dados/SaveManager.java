@@ -17,6 +17,7 @@ public class SaveManager {
                 repositorioGeral.getUsuarioRepositorio(),
                 repositorioGeral.getRepositorioTreinos(),
                 repositorioGeral.getRepositorioProfessores()
+
         );
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.dat"))) {
             out.writeObject(save);

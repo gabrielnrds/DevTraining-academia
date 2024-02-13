@@ -38,14 +38,16 @@ public class CadastroControle implements Initializable {
 
     @FXML
     void CadastrarUsu(ActionEvent event) throws IOException {
-        Usuario usuario = new Usuario(0,txtNome.getText(),txtSenha.getText());
-        Cliente cliente = new Cliente(0,txtNome.getText(),"4",txtEmail.getText(),txtCpf.getText(),"rua",txtIdade.getText(),null,true,usuario);
+        Usuario usuario = new Usuario(txtNome.getText(),txtSenha.getText());
+        Cliente cliente = new Cliente(txtNome.getText(),"4",txtEmail.getText(),txtCpf.getText(),"rua",txtIdade.getText(),null,true,usuario);
 
         Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
         for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
             if (clientes != null) {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
+                System.out.println(cliente);
+                System.out.println(usuario);
             }
         }
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());

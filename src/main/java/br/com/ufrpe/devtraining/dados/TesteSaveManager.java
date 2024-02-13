@@ -1,39 +1,48 @@
-package br.com.ufrpe.devtraining.dados;
-
-public class TesteSaveManager {
-    public static void main(String[] args) {
-        // Criando instâncias dos repositórios individuais
-        RepositorioClientes repositorioClientes = new RepositorioClientes(100);
-        RepositorioExercicios repositorioExercicios = new RepositorioExercicios(100);
-        RepositorioUsuarios repositorioUsuarios = new RepositorioUsuarios(100);
-        RepositorioTreinos repositorioTreinos = new RepositorioTreinos(100);
-        RepositorioProfessores repositorioProfessores = new RepositorioProfessores(100);
-
-        // Adicionando alguns dados aos repositórios (opcional)
-        // (Você pode pular esta parte se já tiver dados nos repositórios)
-
-        // Criando instância de RepositorioGeral e associando os repositórios individuais
-        RepositorioGeral repositorioGeral = new RepositorioGeral();
-        repositorioGeral.setRepositorioClientes(repositorioClientes);
-        repositorioGeral.setRepositorioExercicios(repositorioExercicios);
-        repositorioGeral.setRepositorioUsuarios(repositorioUsuarios);
-        repositorioGeral.setRepositorioTreinos(repositorioTreinos);
-        repositorioGeral.setRepositorioProfessores(repositorioProfessores);
-
-        // Criando instância do SaveManager
-        SaveManager saveManager = new SaveManager(repositorioGeral);
-
-        // Salvando os dados
-        saveManager.salvar();
-
-        // Carregando os dados
-        saveManager.carregar();
-
-        // Verificando se os dados foram carregados corretamente
-        System.out.println("Repositório de clientes carregado com sucesso: " + repositorioGeral.getRepositorioClientes());
-        System.out.println("Repositório de exercícios carregado com sucesso: " + repositorioGeral.getRepositorioExercicios());
-        System.out.println("Repositório de usuários carregado com sucesso: " + repositorioGeral.getUsuarioRepositorio());
-        System.out.println("Repositório de treinos carregado com sucesso: " + repositorioGeral.getRepositorioTreinos());
-        System.out.println("Repositório de professores carregado com sucesso: " + repositorioGeral.getRepositorioProfessores());
-    }
-}
+//// SaveManager.java
+//package br.com.ufrpe.devtraining.dados;
+//
+//import java.io.*;
+//
+//public class SaveManager {
+//    private RepositorioGeral repositorioGeral;
+//
+//    public SaveManager(RepositorioGeral repositorioGeral) {
+//        this.repositorioGeral = repositorioGeral;
+//    }
+//
+//    public void salvar() {
+//        Save save = new Save(
+//                repositorioGeral.getRepositorioClientes(),
+//                repositorioGeral.getRepositorioExercicios(),
+//                repositorioGeral.getUsuarioRepositorio(),
+//                repositorioGeral.getRepositorioTreinos(),
+//                repositorioGeral.getRepositorioProfessores(),
+//                repositorioGeral.getRepositorioClientes().getUltimoNumeroIdCliente() // Obtenha o próximo ID do cliente
+//        );
+//        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.dat"))) {
+//            out.writeObject(save);
+//            System.out.println("Dados salvos com sucesso.");
+//        } catch (IOException e) {
+//            System.out.println("Erro ao salvar os dados: " + e.getMessage());
+//        }
+//    }
+//
+//    public void carregar() {
+//        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("save.dat"))) {
+//            Save save = (Save) in.readObject();
+//
+//            repositorioGeral.setRepositorioClientes(save.getRepCliente());
+//            repositorioGeral.setRepositorioExercicios(save.getRepExercicio());
+//            repositorioGeral.setRepositorioUsuarios(save.getRepUsuario());
+//            repositorioGeral.setRepositorioTreinos(save.getRepTreino());
+//            repositorioGeral.setRepositorioProfessores(save.getRepProfessor());
+//
+//            // Defina o próximo ID do cliente após o carregamento
+//            repositorioGeral.getRepositorioClientes().setUltimoNumeroIdCliente(save.getUltimoNumeroIdCliente());
+//
+//            System.out.println("Dados carregados com sucesso.");
+//        } catch (IOException | ClassNotFoundException e) {
+//            System.out.println("Erro ao carregar os dados: " + e.getMessage());
+//        }
+//    }
+//}
