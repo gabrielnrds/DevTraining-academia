@@ -34,12 +34,14 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="BtnImprimirTreino" layoutX="352.0" layoutY="237.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #f78120;" />
-      <Text fx:id="TextoVoltarFicha1" layoutX="394.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMPRIMIR TREINO!">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Text>
+      <Button fx:id="BtnImprimirTreino" layoutX="352.0" layoutY="237.0" mnemonicParsing="false" onAction="#ImprimirFichaTreino" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #f78120;">
+         <graphic>
+            <Text fx:id="TextoVoltarFicha1" strokeType="OUTSIDE" strokeWidth="0.0" text="IMPRIMIR TREINO!">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </graphic></Button>
       <Text fx:id="TextoVoltarFicha" layoutX="42.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLTAR">
          <font>
             <Font name="System Bold" size="20.0" />
