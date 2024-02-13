@@ -1,3 +1,4 @@
+// IDManager.java
 package br.com.ufrpe.devtraining.dados;
 
 import java.io.*;
@@ -6,25 +7,17 @@ public class IDManager implements Serializable {
     private static final String CLIENT_FILENAME = "last_client_id.dat";
     private static final String PROFESSOR_FILENAME = "last_professor_id.dat";
     private static final String USUARIO_FILENAME = "last_usuario_id.dat";
+    private static final String TREINO_FILENAME = "last_treino_id.dat";
     private int lastClientID;
     private int lastProfessorID;
     private int lastUsuarioID;
+    private int lastTreinoID;
 
     public IDManager() {
         loadLastClientID();
         loadLastProfessorID();
         loadLastUsuarioID();
-    }
-
-    private void ensureFileExists(String filename) {
-        File file = new File(filename);
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                System.out.println("Erro ao criar o arquivo " + filename + ": " + e.getMessage());
-            }
-        }
+        loadLastTreinoID();
     }
 
     public int getLastClientID() {
@@ -41,16 +34,24 @@ public class IDManager implements Serializable {
 
     public void setLastProfessorID(int lastProfessorID) {
         this.lastProfessorID = lastProfessorID;
-        saveLastProfessorID(); // Salva o último ID do professor após atualizá-lo
     }
 
     public int getLastUsuarioID() {
         return lastUsuarioID;
     }
 
+    // Dentro do método setLastUsuarioID():
     public void setLastUsuarioID(int lastUsuarioID) {
         this.lastUsuarioID = lastUsuarioID;
         saveLastUsuarioID(); // Salva o último ID do usuário após atualizá-lo
+    }
+
+    public void setLastTreinoID(int lastTreinoID) {
+        this.lastTreinoID = lastTreinoID;
+        saveLastTreinoID();
+    }
+    public int getLastTreinoID() {
+        return lastTreinoID;
     }
 
     public void saveLastClientID() {
@@ -63,7 +64,6 @@ public class IDManager implements Serializable {
     }
 
     public void loadLastClientID() {
-        ensureFileExists(CLIENT_FILENAME);
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(CLIENT_FILENAME))) {
             lastClientID = (int) in.readObject();
             System.out.println("Último ID do cliente carregado com sucesso.");
@@ -82,7 +82,6 @@ public class IDManager implements Serializable {
     }
 
     public void loadLastProfessorID() {
-        ensureFileExists(PROFESSOR_FILENAME);
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(PROFESSOR_FILENAME))) {
             lastProfessorID = (int) in.readObject();
             System.out.println("Último ID do professor carregado com sucesso.");
@@ -101,12 +100,29 @@ public class IDManager implements Serializable {
     }
 
     public void loadLastUsuarioID() {
-        ensureFileExists(USUARIO_FILENAME);
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(USUARIO_FILENAME))) {
             lastUsuarioID = (int) in.readObject();
             System.out.println("Último ID do Usuário carregado com sucesso.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Erro ao carregar último ID do Usuário: " + e.getMessage());
+        }
+    }
+
+    public void saveLastTreinoID() {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(TREINO_FILENAME))) {
+            out.writeObject(lastTreinoID);
+            System.out.println("Último ID do Treino salvo com sucesso.");
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar último ID do Treino: " + e.getMessage());
+        }
+    }
+
+    public void loadLastTreinoID() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(TREINO_FILENAME))) {
+            lastTreinoID = (int) in.readObject();
+            System.out.println("Último ID do Treino carregado com sucesso.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao carregar último ID do Treino: " + e.getMessage());
         }
     }
 }

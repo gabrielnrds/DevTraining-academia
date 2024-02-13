@@ -8,7 +8,6 @@ import java.util.Objects;
 public class Professor extends Pessoa implements Serializable {
 
     private static int proximoId = 1;
-
     private String turno;
     private double salario;
     private Usuario usuario;

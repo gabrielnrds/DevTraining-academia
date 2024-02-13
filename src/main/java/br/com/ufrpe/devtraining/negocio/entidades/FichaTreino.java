@@ -1,12 +1,14 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
+import br.com.ufrpe.devtraining.dados.IDManager;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FichaTreino implements Serializable {
-
+    private static final IDManager idManager = new IDManager();
     private int idTreino;
     private Professor professor;
     private Cliente cliente;
@@ -14,14 +16,22 @@ public class FichaTreino implements Serializable {
     private List<Exercicio> exercicios;
     private String tipoTreino;
 
-    public FichaTreino(int idTreino, Professor professor, Cliente cliente, String tipoTreino) {
-        this.idTreino = idTreino;
+
+    public FichaTreino(Professor professor, Cliente cliente, String tipoTreino) {
+        this.idTreino = proximoId();
         this.professor = professor;
         this.cliente = cliente;
         this.dataCriacao = LocalDate.now();
         this.exercicios = new ArrayList<>();
         this.tipoTreino = tipoTreino;
     }
+
+    private static int proximoId() {
+        int proximoId = idManager.getLastTreinoID() + 1;
+        idManager.setLastTreinoID(proximoId); // Atualiza o IDManager com o próximo ID
+        return proximoId;
+    }
+
     public int getIdTreino() {
         return idTreino;
     }
