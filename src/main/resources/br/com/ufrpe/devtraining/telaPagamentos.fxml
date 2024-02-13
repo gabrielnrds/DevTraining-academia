@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.PagamentoController">
    <children>
-      <Button fx:id="BtnVoltarCatraca" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="Voltar" textAlignment="CENTER">
+      <Button fx:id="BtnVoltarCatraca" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="Voltar" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
       <Button fx:id="BtnCartao" layoutX="172.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;" />
       <Button fx:id="BtnDinheiro" layoutX="553.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;" />
-      <Text fill="WHITE" layoutX="242.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARTÃO" />
-      <Text fill="WHITE" layoutX="619.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DINHEIRO" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="571.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/1986633.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="122.0" fitWidth="144.0" layoutX="204.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/71227.png" />
-         </image>
-      </ImageView>
+      <Text fill="WHITE" layoutX="238.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARTÃO">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="615.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DINHEIRO">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
       <Text fill="WHITE" layoutX="407.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VALOR DO PLANO:" />
       <Text fill="WHITE" layoutX="433.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$119,90" />
       <Text fill="WHITE" layoutX="386.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIDELIZAÇÃO NO CARTÃO:" />
@@ -38,5 +35,24 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
+      <ImageView fitHeight="122.0" fitWidth="144.0" layoutX="199.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/71227.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="574.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/1986633.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" layoutX="2.0" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

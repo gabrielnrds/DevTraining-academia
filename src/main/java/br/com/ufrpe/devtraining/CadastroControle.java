@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -18,7 +19,8 @@ public class CadastroControle implements Initializable {
 
     @FXML
     private Button BTNCasdastrar;
-
+    @FXML
+    private Button BtnVoltarCadastro;
     @FXML
     private TextField txtCpf;
 
@@ -32,7 +34,7 @@ public class CadastroControle implements Initializable {
     private TextField txtNome;
 
     @FXML
-    private TextField txtSenha;
+    private PasswordField txtSenha;
 
     @FXML
     void CadastrarUsu(ActionEvent event) throws IOException {
@@ -44,16 +46,16 @@ public class CadastroControle implements Initializable {
         for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
             if (clientes != null) {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
-
             }
         }
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
     }
-
-
+    @FXML
+    void VoltarTelaMenu(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         }
     }
 
