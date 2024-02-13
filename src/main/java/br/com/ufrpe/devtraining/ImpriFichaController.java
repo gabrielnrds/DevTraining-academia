@@ -60,7 +60,7 @@ public class ImpriFichaController {
                     }
 
                     usuarioEncontrado = true;
-                    Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+                    Main.trocarTela(new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml")).load());
                     break;
                 }}}
         System.out.println("Usuário encontrado? " + usuarioEncontrado);

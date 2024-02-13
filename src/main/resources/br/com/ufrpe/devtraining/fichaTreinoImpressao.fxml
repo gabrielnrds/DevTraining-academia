@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="15.0" prefHeight="487.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="DevTraining Academia">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Line endX="185.5" startX="-100.0" strokeDashOffset="20.0" style="-fx-stroke-dash-array: 3;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Line>
+            <VBox prefHeight="124.0" prefWidth="287.0">
+               <children>
+                  <Label fx:id="lbl_id_cliente" text="ID DO CLIENTE">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbl_nome_cliente" text="NOME DO CLIENTE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbl_idade_cliente" text="IDADE" />
+                  <Label fx:id="lbl_nome_professor" text="PROFESSOR" />
+                  <Label />
+                  <Label fx:id="lbl_tipo_treino" text="TIPO DE TREINO" />
+               </children>
+            </VBox>
+            <Line endX="185.5" startX="-100.0" strokeDashOffset="20.0" style="-fx-stroke-dash-array: 3;" />
+            <HBox prefHeight="25.0" prefWidth="287.0">
+               <children>
+                  <Label text="NOME" />
+                  <Label text="SERIE">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="REP">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="list_exercicios" prefHeight="290.0" prefWidth="241.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
