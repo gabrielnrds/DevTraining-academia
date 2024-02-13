@@ -19,22 +19,8 @@
       </Text>
       <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="600.0" prefWidth="245.0" style="-fx-background-color: #685e57;">
          <children>
-            <Button fx:id="BtnCatraca" layoutX="1.0" layoutY="58.0" mnemonicParsing="false" onAction="#LiberarCatraca" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;">
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LIBERAR CATRACA" wrappingWidth="189.79998779296875">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-               </graphic></Button>
-            <Button fx:id="BtnCadastro" layoutX="3.0" layoutY="127.0" mnemonicParsing="false" onAction="#TelaCadastro" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;">
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-               </graphic></Button>
+            <Button fx:id="BtnCatraca" layoutX="1.0" layoutY="58.0" mnemonicParsing="false" onAction="#LiberarCatraca" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;" />
+            <Button fx:id="BtnCadastro" layoutX="3.0" layoutY="127.0" mnemonicParsing="false" onAction="#TelaCadastro" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;" />
             <Button fx:id="BtnPagamento" layoutX="1.0" layoutY="205.0" mnemonicParsing="false" onAction="#TelaPagamentos" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;">
                <graphic>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PAGAMENTO">
@@ -48,6 +34,16 @@
                   <Image url="@../../../../imagens/17764451-logotipo-universal-em-preto-e-branco-com-a-imagem-de-um-esportista-bom-para-academia-vetor-removebg-preview.png" />
                </image>
             </ImageView>
+            <Text layoutX="31.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBERAR CATRACA" wrappingWidth="189.79998779296875">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="85.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <Button fx:id="BtnImprimirFicha" layoutX="263.0" layoutY="86.0" mnemonicParsing="false" onAction="#TelaImprimirFicha" prefHeight="126.0" prefWidth="197.0" style="-fx-background-color: #685e57;" text="IMPRIMIR FICHA" textFill="WHITE">

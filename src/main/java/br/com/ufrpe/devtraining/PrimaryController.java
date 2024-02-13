@@ -63,8 +63,6 @@ public class PrimaryController implements Initializable {
             // Verifica se o usuário atual não é nulo antes de acessar seus atributos
             if (usuario != null) {
                 if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
-
-                    exibirAlertaMensagem("Sucesso", "Usuário encontrado!");
                     // Define o cliente logado
                     clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                     if (getClienteLogado() != null) {
@@ -73,7 +71,6 @@ public class PrimaryController implements Initializable {
 
                     usuarioEncontrado = true;
                     Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
-                    // Pra trocar pra tela de bigode, tem que trocar o TelaMenuNova por telaMenuPrincipal
                     break;
                 }
             }
