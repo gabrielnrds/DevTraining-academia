@@ -14,8 +14,6 @@ public class RepositorioClientes implements Serializable  {
     private Cliente[] clientes;
     private int proxima;
 
-
-
     public RepositorioClientes(int tamanho) {
         this.clientes = new Cliente[tamanho];
         this.proxima = 0;

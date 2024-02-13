@@ -7,14 +7,17 @@ public class IDManager implements Serializable {
     private static final String CLIENT_FILENAME = "last_client_id.dat";
     private static final String PROFESSOR_FILENAME = "last_professor_id.dat";
     private static final String USUARIO_FILENAME = "last_usuario_id.dat";
+    private static final String TREINO_FILENAME = "last_treino_id.dat";
     private int lastClientID;
     private int lastProfessorID;
     private int lastUsuarioID;
+    private int lastTreinoID;
 
     public IDManager() {
         loadLastClientID();
         loadLastProfessorID();
         loadLastUsuarioID();
+        loadLastTreinoID();
     }
 
     public int getLastClientID() {
@@ -43,6 +46,13 @@ public class IDManager implements Serializable {
         saveLastUsuarioID(); // Salva o último ID do usuário após atualizá-lo
     }
 
+    public void setLastTreinoID(int lastTreinoID) {
+        this.lastTreinoID = lastTreinoID;
+        saveLastTreinoID();
+    }
+    public int getLastTreinoID() {
+        return lastTreinoID;
+    }
 
     public void saveLastClientID() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(CLIENT_FILENAME))) {
@@ -95,6 +105,24 @@ public class IDManager implements Serializable {
             System.out.println("Último ID do Usuário carregado com sucesso.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Erro ao carregar último ID do Usuário: " + e.getMessage());
+        }
+    }
+
+    public void saveLastTreinoID() {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(TREINO_FILENAME))) {
+            out.writeObject(lastTreinoID);
+            System.out.println("Último ID do Treino salvo com sucesso.");
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar último ID do Treino: " + e.getMessage());
+        }
+    }
+
+    public void loadLastTreinoID() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(TREINO_FILENAME))) {
+            lastTreinoID = (int) in.readObject();
+            System.out.println("Último ID do Treino carregado com sucesso.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao carregar último ID do Treino: " + e.getMessage());
         }
     }
 }
