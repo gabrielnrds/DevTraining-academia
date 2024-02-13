@@ -14,22 +14,8 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="BtnCartao" layoutX="172.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;">
-         <graphic>
-            <ImageView fitHeight="122.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../imagens/71227.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="BtnDinheiro" layoutX="553.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../imagens/1986633.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+      <Button fx:id="BtnCartao" layoutX="172.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;" />
+      <Button fx:id="BtnDinheiro" layoutX="553.0" layoutY="210.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;" />
       <Text fill="WHITE" layoutX="238.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARTÃO">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -47,5 +33,15 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
+      <ImageView fitHeight="122.0" fitWidth="144.0" layoutX="199.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/71227.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="574.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/1986633.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
