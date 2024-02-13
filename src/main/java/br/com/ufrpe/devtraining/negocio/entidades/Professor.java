@@ -21,7 +21,7 @@ public class Professor extends Pessoa implements Serializable {
         this.salario = salario;
         this.usuario = usuario;
         this.id = gerarIdProfessor();
-        idManager.setLastProfessorID(idManager.getLastProfessorID() + 1);
+        idManager.setLastProfessorID(idManager.getLastProfessorID() + 1); // Incrementando o ID no IDManager
         proximoId++;
     }
 
@@ -79,4 +79,6 @@ public class Professor extends Pessoa implements Serializable {
     private String gerarIdProfessor() {
         return super.getId() + "P"; // Utilizando o ID herdado da classe Pessoa
     }
+
 }
+
