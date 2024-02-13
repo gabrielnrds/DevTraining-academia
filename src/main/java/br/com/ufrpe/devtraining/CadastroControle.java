@@ -44,10 +44,12 @@ public class CadastroControle implements Initializable {
         for (Pessoa clientes:Main.repositorioGeral.getRepositorioClientes().getClientes()) {
             if (clientes != null) {
                 System.out.println(cliente.getUsuario().getNomeUsuario());
+
             }
         }
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

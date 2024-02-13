@@ -13,7 +13,7 @@ public class RepositorioClientes implements Serializable  {
 
     private Cliente[] clientes;
     private int proxima;
-    private String arquivo = "clientes.txt";
+
 
     public RepositorioClientes(int tamanho) {
         this.clientes = new Cliente[tamanho];
