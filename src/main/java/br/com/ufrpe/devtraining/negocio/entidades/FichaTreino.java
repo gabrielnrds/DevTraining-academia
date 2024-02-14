@@ -62,21 +62,25 @@ public class FichaTreino implements Serializable {
     }
 
     public void adicionarExercicio(String tipo, Exercicio exercicio) {
-        List<Exercicio> listaExercicios = exerciciosPorTipo.get(tipo);
-        if (listaExercicios != null) {
-            listaExercicios.add(exercicio);
-        } else {
-            System.out.println("Tipo de exercício inválido!");
+        if (exercicio == null) {
+            throw new IllegalArgumentException("O exercício não pode ser nulo.");
         }
+        List<Exercicio> listaExercicios = exerciciosPorTipo.get(tipo);
+        if (listaExercicios == null) {
+            throw new IllegalArgumentException("Tipo de exercício inválido: " + tipo);
+        }
+        listaExercicios.add(exercicio);
     }
 
     public void removerExercicio(String tipo, int indice) {
         List<Exercicio> listaExercicios = exerciciosPorTipo.get(tipo);
-        if (listaExercicios != null && indice >= 0 && indice < listaExercicios.size()) {
-            listaExercicios.remove(indice);
-        } else {
-            System.out.println("Tipo de exercício inválido ou índice fora dos limites!");
+        if (listaExercicios == null) {
+            throw new IllegalArgumentException("Tipo de exercício inválido: " + tipo);
         }
+        if (indice < 0 || indice >= listaExercicios.size()) {
+            throw new IndexOutOfBoundsException("Índice fora dos limites: " + indice);
+        }
+        listaExercicios.remove(indice);
     }
 
     // Outros métodos para alterar, buscar, etc.
@@ -90,17 +94,26 @@ public class FichaTreino implements Serializable {
         resultado.append("Data de criação: ").append(dataCriacao.toString()).append("\n");
         resultado.append("----------------------------\n");
         resultado.append("Tipo de treino: ").append(tipoTreino).append("\n");
-        resultado.append("Nome:           Series:  Repetições:\n");
+        resultado.append("Total de exercícios: ").append(calcularTotalExercicios()).append("\n");
+        resultado.append("Nome:           Séries:  Repetições:\n");
         for (Map.Entry<String, List<Exercicio>> entry : exerciciosPorTipo.entrySet()) {
             String tipo = entry.getKey();
             List<Exercicio> exercicios = entry.getValue();
             for (Exercicio exercicio : exercicios) {
                 resultado.append(tipo).append(": ");
                 resultado.append(exercicio.getNome()).append(" - ");
-                resultado.append("Series: ").append(exercicio.getSeries()).append(", ");
+                resultado.append("Séries: ").append(exercicio.getSeries()).append(", ");
                 resultado.append("Repetições: ").append(exercicio.getRepeticoes()).append("\n");
             }
         }
         return resultado.toString();
+    }
+
+    private int calcularTotalExercicios() {
+        int total = 0;
+        for (List<Exercicio> exercicios : exerciciosPorTipo.values()) {
+            total += exercicios.size();
+        }
+        return total;
     }
 }
