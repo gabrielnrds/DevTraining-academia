@@ -5,12 +5,22 @@ import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Exercicio;
 import br.com.ufrpe.devtraining.negocio.entidades.FichaTreino;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
+
 public class CadastroFichaTreinoController {
+
+    @FXML
+    private Button BtnVoltar;
+
     @FXML
     private TextField txtNomeExercicio;
 
@@ -106,5 +116,9 @@ public class CadastroFichaTreinoController {
         alert.setHeaderText(null);
         alert.setContentText(mensagem);
         alert.showAndWait();
+    }
+    @FXML
+    void VoltarTelaMenu(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
     }
 }

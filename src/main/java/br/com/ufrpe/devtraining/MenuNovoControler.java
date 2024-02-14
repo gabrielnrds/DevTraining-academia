@@ -17,6 +17,9 @@ public class MenuNovoControler implements Initializable {
     private Button BtnBuscarAlnProf;
 
     @FXML
+    private Button BtnCriarFicha;
+
+    @FXML
     private Button BtnCadastro;
 
     @FXML

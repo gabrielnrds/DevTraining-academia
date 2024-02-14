@@ -21,5 +21,6 @@
       <TextField fx:id="txtRepeticoes" layoutX="157.0" layoutY="165.0" prefWidth="200.0" />
       <ChoiceBox fx:id="choiceBoxTipoLista" layoutX="157.0" layoutY="200.0" prefWidth="150.0" />
       <Button layoutX="300.0" layoutY="250.0" mnemonicParsing="false" onAction="#adicionarExercicio" text="Adicionar" />
+      <Button fx:id="BtnVoltar" layoutX="46.0" layoutY="250.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" text="Voltar" />
    </children>
 </AnchorPane>
