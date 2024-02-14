@@ -14,6 +14,9 @@ import java.util.ResourceBundle;
 public class MenuNovoControler implements Initializable {
 
     @FXML
+    private Button BtnBuscarAlnProf;
+
+    @FXML
     private Button BtnCadastro;
 
     @FXML
@@ -50,6 +53,11 @@ public class MenuNovoControler implements Initializable {
     @FXML
     void TelaImprimirFicha(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
+    }
+
+    @FXML
+    void TelaBuscarAlnProf(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaBuscaAlnProf.fxml")).load());
     }
 
     @Override
