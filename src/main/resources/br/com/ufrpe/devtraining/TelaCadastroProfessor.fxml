@@ -17,7 +17,7 @@
       <TextField fx:id="txtIdade" layoutX="525.0" layoutY="226.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <TextField fx:id="txtNome" layoutX="230.0" layoutY="203.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <Text layoutX="184.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="48.0" />
-      <Text fill="#f78120" layoutX="231.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a senha:">
+      <Text fill="#f78120" layoutX="229.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a senha:">
          <font>
             <Font size="18.0" />
          </font></Text>
@@ -30,7 +30,7 @@
             <Font size="18.0" />
          </font></Text>
       <TextField fx:id="txtCpf" layoutX="230.0" layoutY="254.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
-      <Text fill="#f78120" layoutX="231.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
+      <Text fill="#f78120" layoutX="231.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
          <font>
             <Font size="18.0" />
          </font></Text>
@@ -68,13 +68,13 @@
       </Text>
       <TextField fx:id="txtTelefone" layoutX="525.0" layoutY="390.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <TextField fx:id="txtSalario" layoutX="230.0" layoutY="372.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
-      <TextField fx:id="txtTurno" layoutX="230.0" layoutY="437.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
-      <Text fill="#f78120" layoutX="232.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salário:">
+      <TextField fx:id="txtTurno" layoutX="230.0" layoutY="434.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text fill="#f78120" layoutX="230.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salário:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#f78120" layoutX="224.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno:">
+      <Text fill="#f78120" layoutX="232.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno:">
          <font>
             <Font size="18.0" />
          </font>
