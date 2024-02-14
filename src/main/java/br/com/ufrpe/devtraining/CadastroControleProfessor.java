@@ -76,6 +76,11 @@ public class CadastroControleProfessor {
             exibirAlertaMensagem("Erro de Validação", "O salário informado não é um número válido.");
             return;
         }
+        // Verifica se o CPF já está cadastrado
+        if (Main.repositorioGeral.getRepositorioProfessores().existeProfessorComCpf(cpf)) {
+            exibirAlertaMensagem("Erro de Validação", "CPF já cadastrado.");
+            return;
+        }
 
         // Agora você pode prosseguir com o cadastro do professor
         Usuario usuario = new Usuario(nome, senha);

@@ -17,8 +17,8 @@ public class RepositorioProfessores implements Serializable {
 
     // Método para cadastrar
     public void cadastrar(Professor professor) {
-        if (existeProfessorComId(professor.getId())) {
-            System.out.println("ID já existe. Não é possível cadastrar o professor.");
+        if (existeProfessorComCpf(professor.getCpf())) {
+            System.out.println("CPF já existe. Não é possível cadastrar o professor.");
             return;
         }
         this.professores[this.proxima] = professor;
@@ -27,18 +27,18 @@ public class RepositorioProfessores implements Serializable {
 
     }
 
-    private boolean existeProfessorComId(int id) {
-        return buscar(id) != null;
+    public boolean existeProfessorComCpf(String cpf) {
+        return buscar(cpf) != null;
     }
 
 
 
     // Método para buscar
-    public Professor buscar(int id_professor) {
+    public Professor buscar(String cpf) {
         int i = 0;
 
         while (i < this.proxima) {
-            if (id_professor==this.professores[i].getId()) {
+            if (cpf.equals(this.professores[i].getCpf())) {
                 return this.professores[i];
             }
             i++;
@@ -47,11 +47,11 @@ public class RepositorioProfessores implements Serializable {
     }
 
     // Método para remover
-    public void remover(int id_professor) {
+    public void remover(String cpf) {
         int i = 0;
         boolean achou = false;
         while ((!achou) && (i < this.proxima)) {
-            if (id_professor == this.professores[i].getId()) {
+            if (cpf.equals(this.professores[i].getId())) {
                 achou = true;
             } else {
                 i++;
@@ -64,19 +64,19 @@ public class RepositorioProfessores implements Serializable {
             this.proxima--;
 
 
-            System.out.println("Professor " + id_professor + " removido com sucesso.");
+            System.out.println("Professor " + cpf + " removido com sucesso.");
         } else {
             System.out.println("Professor não encontrado.");
         }
     }
 
     // Método para alterar as informações de um professor
-    public void alterar(int id_professor, Professor novoProfessor) {
+    public void alterar(String cpf, Professor novoProfessor) {
         int i = 0;
         boolean achou = false;
         // Procura o professor com o ID fornecido
         while ((!achou) && (i < this.proxima)) {
-            if (id_professor == this.professores[i].getId()) {
+            if (cpf.equals(this.professores[i].getId())) {
                 achou = true;
             } else {
                 i++;
@@ -86,7 +86,7 @@ public class RepositorioProfessores implements Serializable {
         // Se encontrou o professor, realiza a alteração
         if (achou) {
             this.professores[i] = novoProfessor;
-            System.out.println("Professor " + id_professor + " alterado com sucesso.");
+            System.out.println("Professor " + cpf + " alterado com sucesso.");
 
         } else {
             System.out.println("Professor não encontrado.");
