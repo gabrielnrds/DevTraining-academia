@@ -8,7 +8,7 @@ import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 public class RepositorioProfessores implements Serializable {
     private Professor[]professores ;
     private int proxima;
-    private String arquivo = "professores.txt";
+
 
     public RepositorioProfessores(int tamnho) {
         this.professores = new Professor[tamnho];
@@ -62,7 +62,7 @@ public class RepositorioProfessores implements Serializable {
             this.professores[i] = this.professores[this.proxima - 1];
             this.professores[this.proxima - 1] = null;
             this.proxima--;
-            //salvarDados();
+
 
             System.out.println("Professor " + id_professor + " removido com sucesso.");
         } else {
