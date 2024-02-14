@@ -4,8 +4,7 @@ import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
-import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
-
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,21 +47,31 @@ public class ImpriFichaController {
         String nomeCliente = TxtProcurarAluno.getText();
 
         boolean usuarioEncontrado = false;
-        // Percorre os usuários no repositório
+
         for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
-            // Verifica se o usuário atual não é nulo antes de acessar seus atributos
             if (usuario != null) {
                 if (nomeCliente.equals(usuario.getNomeUsuario())) {
-                    // Define o cliente logado
                     clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                     if (getClienteLogado() != null) {
                         System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
                     }
 
                     usuarioEncontrado = true;
-                    Main.trocarTela(new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml")).load());
+                    FXMLLoader loader = new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml"));
+                    Parent root = loader.load();
+
+                    // Obtém o controlador da tela de impressão
+                    FichaTreinoController controller = loader.getController();
+
+                    // Define o nome do cliente no controlador da tela de impressão
+                    controller.setNomeCliente(nomeCliente);
+
+                    Main.trocarTela(root);
                     break;
-                }}}
+                }
+            }
+        }
+
         System.out.println("Usuário encontrado? " + usuarioEncontrado);
 
         if (!usuarioEncontrado) {
@@ -78,4 +87,4 @@ public class ImpriFichaController {
 
         alerta.showAndWait();
     }
-    }
+}

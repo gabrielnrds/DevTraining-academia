@@ -19,7 +19,7 @@ public class BuscaAlnController {
     private Button BtnVoltarLogin;
 
     @FXML
-    private TextField TxtProcurarAluno;
+    TextField TxtProcurarAluno;
 
     @FXML
     private Label LblNomeAluno;
