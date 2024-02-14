@@ -65,8 +65,20 @@ public class Professor extends Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "Professor [id=" + id + ", turno=" + turno + ", salario=" + salario + "]";
+        return "Professor{" +
+                "id='" + id + '\'' +
+                ", nome='" + getNome() + '\'' +
+                ", telefone='" + getTelefone() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", cpf='" + getCpf() + '\'' +
+                ", endereco='" + getEndereco() + '\'' +
+                ", idade='" + getIdade() + '\'' +
+                ", turno='" + turno + '\'' +
+                ", salario=" + salario +
+                ", usuario=" + usuario +
+                '}';
     }
+
 
     public void criarTreino(String treino) {
         // Implementação do método para criar treino

@@ -46,7 +46,7 @@ public class BuscaProfController {
     void BuscarProfessor(ActionEvent event) {
         String nomeProfessor = TxtProcurarProfessor.getText();
 
-        // Realiza a busca do professor pelo nome
+        // Realiza a busca do professor pelo CPF
         Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(nomeProfessor);
 
         if (professorEncontrado != null) {

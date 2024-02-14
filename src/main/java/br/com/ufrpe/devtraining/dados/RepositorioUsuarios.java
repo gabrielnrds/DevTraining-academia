@@ -9,7 +9,7 @@ public class RepositorioUsuarios implements Serializable {
     private Usuario[] usuariosRepositorio;
     private int proxima;
 
-    private String arquivo ="Usuarios.txt";
+
 
     public RepositorioUsuarios(int tamanho) {
         this.usuariosRepositorio = new Usuario[tamanho];
