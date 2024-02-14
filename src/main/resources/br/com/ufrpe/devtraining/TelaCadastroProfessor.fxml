@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroControleProfessor">
+   <children>
+      <TextField fx:id="txtEmail" layoutX="525.0" layoutY="287.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtIdade" layoutX="525.0" layoutY="226.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtNome" layoutX="230.0" layoutY="203.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text layoutX="184.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="48.0" />
+      <Text fill="#f78120" layoutX="229.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a senha:">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="#f78120" layoutX="528.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade:">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="#f78120" layoutX="525.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="txtCpf" layoutX="230.0" layoutY="254.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text fill="#f78120" layoutX="231.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Button fx:id="BTNCasdastrar" layoutX="346.0" layoutY="485.0" mnemonicParsing="false" onAction="#CadastrarProfessor" prefHeight="44.0" prefWidth="251.0" style="-fx-background-color: #f78120;">
+         <graphic>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PROFESSOR">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </graphic></Button>
+      <Text fill="#f78120" layoutX="231.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seu nome:" wrappingWidth="161.41917419433594">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="188.0" fitWidth="271.0" layoutX="364.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/17764451-logotipo-universal-em-preto-e-branco-com-a-imagem-de-um-esportista-bom-para-academia-vetor-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="txtSenha" layoutX="230.0" layoutY="311.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Button fx:id="BtnVoltarCadastro" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="18.0" layoutY="69.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="Voltar" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TextField fx:id="txtEndereco" layoutX="525.0" layoutY="339.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text fill="#f78120" layoutX="525.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtTelefone" layoutX="525.0" layoutY="390.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtSalario" layoutX="230.0" layoutY="372.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtTurno" layoutX="230.0" layoutY="434.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text fill="#f78120" layoutX="230.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salário:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#f78120" layoutX="232.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#f78120" layoutX="527.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

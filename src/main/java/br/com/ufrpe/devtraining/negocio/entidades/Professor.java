@@ -1,29 +1,30 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
+import br.com.ufrpe.devtraining.dados.IDManager;
+
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Scanner;
 
+public class Professor extends Pessoa implements Serializable {
 
-public class Professor extends Pessoa
-        implements Serializable{
-
+    private static int proximoId = 1;
     private String turno;
     private double salario;
+    private Usuario usuario;
+    private String id;
+    private static IDManager idManager = new IDManager();
 
-    public Professor(String wendell, String number, String mail, String id, int i, int i1, String manhã, int i2) {
 
-    }
-
-    public Professor(int id, String nome, String telefone, String email, String cpf, String endereco, String idade, String turno, double salario) {
-        super(id, nome, telefone, email, cpf, endereco, idade);
+    public Professor(String nome, String telefone, String email, String cpf, String endereco, String idade, String turno, double salario, Usuario usuario) {
+        super(proximoId, nome, telefone, email, cpf, endereco, idade);
         this.turno = turno;
         this.salario = salario;
+        this.usuario = usuario;
+        this.id = gerarIdProfessor();
+        idManager.setLastProfessorID(idManager.getLastProfessorID() + 1); // Incrementando o ID no IDManager
+        proximoId++;
     }
 
-    public int getIdDoProfessor(){
-        return (int) getId();
-    }
 
     public String getTurno() {
         return turno;
@@ -40,7 +41,6 @@ public class Professor extends Pessoa
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
 
     @Override
     public int hashCode() {
@@ -65,14 +65,21 @@ public class Professor extends Pessoa
 
     @Override
     public String toString() {
-        return "Professor [turno=" + turno + ", salario=" + salario + "]";
+        return "Professor [id=" + id + ", turno=" + turno + ", salario=" + salario + "]";
     }
 
     public void criarTreino(String treino) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o treino: ");
-        String treino1 = scanner.nextLine();
-        System.out.println("Treino criado: " + treino1);
-        scanner.close();
+        // Implementação do método para criar treino
     }
+
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    private String gerarIdProfessor() {
+        return super.getId() + "P"; // Utilizando o ID herdado da classe Pessoa
+    }
+
 }
+

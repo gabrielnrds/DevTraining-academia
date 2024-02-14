@@ -1,68 +1,58 @@
 package br.com.ufrpe.devtraining;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
+
+import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 
-public class PrimaryController implements Initializable {
-    @FXML
-    private Button BtnLogin;
+import static br.com.ufrpe.devtraining.PrimaryController.getClienteLogado;
 
-    @FXML
-    private Button BtnRegistro;
+public class ImpriFichaController {
 
     @FXML
-    private TextField Texto1;
+    private Button BtnImprimirTreino;
 
     @FXML
-    private TextField TextoDEVTRAINING;
+    private Button BtnVoltarFicha;
 
     @FXML
-    private PasswordField TextoSenha;
+    private Text TextoVoltarFicha;
 
     @FXML
-    private AnchorPane imagemInicio;
+    private Text TextoVoltarFicha1;
 
     @FXML
-    private Text textcpf;
+    private TextField TxtProcurarAluno;
 
-    @FXML
-    private Text textsenha;
     private static Cliente clienteLogado;
 
     @FXML
-    void EntrarTelaCadastro(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroProfessor.fxml")).load());
+    void VoltarTelaMenu(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
     }
 
     @FXML
-    void EntrarNaTelaMenu(ActionEvent event) throws IOException {
-        String nomeUsuario = Texto1.getText();
-        String senhaUsuario = TextoSenha.getText();
+    void ImprimirFichaTreino(ActionEvent event) throws IOException {
+
+        String nomeCliente = TxtProcurarAluno.getText();
 
         boolean usuarioEncontrado = false;
-
         // Percorre os usuários no repositório
         for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
             // Verifica se o usuário atual não é nulo antes de acessar seus atributos
             if (usuario != null) {
-                if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
+                if (nomeCliente.equals(usuario.getNomeUsuario())) {
                     // Define o cliente logado
                     clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
                     if (getClienteLogado() != null) {
@@ -70,20 +60,15 @@ public class PrimaryController implements Initializable {
                     }
 
                     usuarioEncontrado = true;
-                    Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+                    Main.trocarTela(new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml")).load());
                     break;
-                }
-            }
-        }
-
+                }}}
         System.out.println("Usuário encontrado? " + usuarioEncontrado);
 
         if (!usuarioEncontrado) {
             exibirAlertaMensagem("Erro", "Usuário não encontrado!");
         }
     }
-
-
 
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -93,15 +78,4 @@ public class PrimaryController implements Initializable {
 
         alerta.showAndWait();
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Usuario usuario = new Usuario("vini","123");
-        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
-
     }
-
-    public static Cliente getClienteLogado() {
-        return clienteLogado;
-    }
-}

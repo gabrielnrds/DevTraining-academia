@@ -13,11 +13,11 @@ public class RepositorioClientes implements Serializable  {
 
     private Cliente[] clientes;
     private int proxima;
-    private String arquivo = "clientes.txt";
 
     public RepositorioClientes(int tamanho) {
         this.clientes = new Cliente[tamanho];
         this.proxima = 0;
+
     }
 
     public void cadastrar(Cliente cliente) {
@@ -26,9 +26,10 @@ public class RepositorioClientes implements Serializable  {
             return;
         }
 
+
         this.clientes[this.proxima] = cliente;
         this.proxima++;
-        salvarDados();
+
     }
 
     private boolean existeClienteComCPF(String cpf) {
@@ -66,7 +67,7 @@ public class RepositorioClientes implements Serializable  {
             this.clientes[this.proxima - 1] = null;
             this.proxima--;
 
-            salvarDados();
+
             System.out.println("Cliente " + cpf + " removido com sucesso.");
         } else {
             System.out.println("Cliente não encontrado.");
@@ -92,56 +93,25 @@ public class RepositorioClientes implements Serializable  {
             System.out.println("Cliente não encontrado.");
         }
 
-        salvarDados();
+
     }
 
-    void salvarDados() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                new FileOutputStream(arquivo))) {
-            objectOutputStream.writeObject(clientes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    // Carrega dados do arquivo usando serialização
-    void carregarDados() {
-        File file = new File(arquivo);
-
-        if (!file.exists()) {
-            System.out.println("Arquivo não encontrado. Criando um novo arquivo.");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return;
-        }
-
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream(arquivo))) {
-            clientes = (Cliente[])  objectInputStream.readObject();
-            proxima = clientes.length;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public Cliente[] getClientes() {
         return clientes;
     }
 
     public Cliente clienteUsuario(Usuario usuario){
-
-        for(Cliente cliente:clientes){
-            if (cliente.getUsuario().equals(usuario.getNomeUsuario())){
+        for(Cliente cliente : clientes){
+            if (cliente != null && cliente.getUsuario() != null && cliente.getUsuario().equals(usuario)) {
                 return cliente;
             }
-
         }
-        return  null;
-
+        return null;
     }
+
+
 }
 
 

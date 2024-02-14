@@ -3,12 +3,11 @@ package br.com.ufrpe.devtraining.dados;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class RepositorioGeral implements Serializable {
     private RepositorioProfessores repositorioProfessores;
-    private List<Usuario> repositorioUsuarios;
+    private RepositorioUsuarios repositorioUsuarios;
     private RepositorioClientes repositorioClientes;
     private RepositorioExercicios repositorioExercicios;
     private RepositorioTreinos repositorioTreinos;
@@ -17,14 +16,14 @@ public class RepositorioGeral implements Serializable {
         this.repositorioExercicios= new RepositorioExercicios(100);
         this.repositorioProfessores = new RepositorioProfessores(100);
         this.repositorioTreinos =new RepositorioTreinos(100);
-        this.repositorioUsuarios = new ArrayList<>();
+        this.repositorioUsuarios = new RepositorioUsuarios(100);
     }
 
     public RepositorioProfessores getRepositorioProfessores() {
         return repositorioProfessores;
     }
 
-    public List<Usuario> getRepositorioUsuarios() {
+    public RepositorioUsuarios getUsuarioRepositorio() {
 
         return repositorioUsuarios;
     }
@@ -42,5 +41,25 @@ public class RepositorioGeral implements Serializable {
     public RepositorioTreinos getRepositorioTreinos() {
 
         return repositorioTreinos;
+    }
+
+    public void setRepositorioProfessores(RepositorioProfessores repositorioProfessores) {
+        this.repositorioProfessores = repositorioProfessores;
+    }
+
+    public void setRepositorioUsuarios(RepositorioUsuarios repositorioUsuarios) {
+        this.repositorioUsuarios = repositorioUsuarios;
+    }
+
+    public void setRepositorioClientes(RepositorioClientes repositorioClientes) {
+        this.repositorioClientes = repositorioClientes;
+    }
+
+    public void setRepositorioExercicios(RepositorioExercicios repositorioExercicios) {
+        this.repositorioExercicios = repositorioExercicios;
+    }
+
+    public void setRepositorioTreinos(RepositorioTreinos repositorioTreinos) {
+        this.repositorioTreinos = repositorioTreinos;
     }
 }

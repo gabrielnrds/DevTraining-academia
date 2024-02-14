@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.ImpriFichaController">
+   <children>
+      <HBox alignment="CENTER" layoutX="1.0" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;" AnchorPane.bottomAnchor="550.4000000000001" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="BtnVoltarFicha" layoutX="31.0" layoutY="73.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: #f78120;">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TxtProcurarAluno" layoutX="250.0" layoutY="178.0" prefHeight="27.0" prefWidth="462.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="414.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seu nome:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="BtnImprimirTreino" layoutX="352.0" layoutY="237.0" mnemonicParsing="false" onAction="#ImprimirFichaTreino" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #f78120;">
+         <graphic>
+            <Text fx:id="TextoVoltarFicha1" strokeType="OUTSIDE" strokeWidth="0.0" text="IMPRIMIR TREINO!">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </graphic></Button>
+      <Text fx:id="TextoVoltarFicha" layoutX="42.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLTAR">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
