@@ -76,7 +76,7 @@ public class RepositorioProfessores implements Serializable {
         boolean achou = false;
         // Procura o professor com o ID fornecido
         while ((!achou) && (i < this.proxima)) {
-            if (cpf.equals(this.professores[i].getId())) {
+            if (cpf.equals(this.professores[i].getCpf())) {
                 achou = true;
             } else {
                 i++;

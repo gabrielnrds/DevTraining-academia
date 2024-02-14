@@ -67,6 +67,10 @@ public class MenuNovoControler implements Initializable {
     }
 
 
+    @FXML
+    void TelaExcluir(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaExcluirAlnProf.fxml")).load());
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

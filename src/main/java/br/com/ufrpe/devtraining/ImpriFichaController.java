@@ -66,11 +66,23 @@ public class ImpriFichaController {
                     // Define o nome do cliente no controlador da tela de impressão
                     controller.setNomeCliente(nomeCliente);
 
+                    // Verifica se o clienteLogado não é null antes de definir a idade
+                    if (clienteLogado != null) {
+                        controller.setIdadeCliente(clienteLogado.getIdade());
+                    }
+
                     Main.trocarTela(root);
                     break;
                 }
             }
         }
+
+        System.out.println("Usuário encontrado? " + usuarioEncontrado);
+
+        if (!usuarioEncontrado) {
+            exibirAlertaMensagem("Erro", "Usuário não encontrado!");
+        }
+
 
         System.out.println("Usuário encontrado? " + usuarioEncontrado);
 
