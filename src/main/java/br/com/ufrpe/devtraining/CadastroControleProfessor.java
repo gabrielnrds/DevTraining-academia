@@ -7,6 +7,7 @@ import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -49,27 +50,71 @@ public class CadastroControleProfessor {
     private TextField txtTurno;
 
     @FXML
-    void CadastrarProfessor(ActionEvent event)throws IOException {
-        double salario = Double.parseDouble(txtSalario.getText());
-        Usuario usuario = new Usuario(txtNome.getText(),txtSenha.getText());
-        Professor professor = new Professor(txtNome.getText(),txtTelefone.getText(),txtEmail.getText(),txtCpf.getText(),txtEndereco.getText(),txtIdade.getText(),txtTurno.getText(),salario,usuario);
+    void CadastrarProfessor(ActionEvent event) throws IOException {
+        String nome = txtNome.getText();
+        String telefone = txtTelefone.getText();
+        String email = txtEmail.getText();
+        String cpf = txtCpf.getText();
+        String endereco = txtEndereco.getText();
+        String idade = txtIdade.getText();
+        String turno = txtTurno.getText();
+        String salarioText = txtSalario.getText();
+        String senha = txtSenha.getText();
+
+        // Verifica se algum dos campos está vazio
+        if (nome.isEmpty() || telefone.isEmpty() || email.isEmpty() || cpf.isEmpty() ||
+                endereco.isEmpty() || idade.isEmpty() || turno.isEmpty() || salarioText.isEmpty() || senha.isEmpty()) {
+            exibirAlertaMensagem("Erro de Validação", "Por favor, preencha todos os campos.");
+            return;
+        }
+
+        // Verifica se o campo de salário não está vazio e se é um número válido
+        double salario;
+        try {
+            salario = Double.parseDouble(salarioText);
+        } catch (NumberFormatException e) {
+            exibirAlertaMensagem("Erro de Validação", "O salário informado não é um número válido.");
+            return;
+        }
+        // Verifica se o CPF já está cadastrado
+        if (Main.repositorioGeral.getRepositorioProfessores().existeProfessorComCpf(cpf)) {
+            exibirAlertaMensagem("Erro de Validação", "CPF já cadastrado.");
+            return;
+        }
+
+        // Agora você pode prosseguir com o cadastro do professor
+        Usuario usuario = new Usuario(nome, senha);
+        Professor professor = new Professor(nome, telefone, email, cpf, endereco, idade, turno, salario, usuario);
 
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
         Main.repositorioGeral.getRepositorioProfessores().cadastrar(professor);
-        for (Pessoa professores:Main.repositorioGeral.getRepositorioProfessores().getProfessores()) {
+
+        for (Pessoa professores : Main.repositorioGeral.getRepositorioProfessores().getProfessores()) {
             if (professores != null) {
                 System.out.println(professor.getUsuario().getNomeUsuario());
                 System.out.println(professor);
                 System.out.println(usuario);
             }
         }
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
 
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
+
+    public static void exibirAlertaMensagem(String titulo, String mensagem) {
+        System.out.println("Exibindo alerta: " + mensagem); // Adicionando instrução de debug
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null); //sem cabeçalho adicional
+        alerta.setContentText(mensagem);
+
+        alerta.showAndWait();
+    }
+
+
 
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     }
 
 }

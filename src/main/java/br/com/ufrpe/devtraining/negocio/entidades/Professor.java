@@ -72,6 +72,7 @@ public class Professor extends Pessoa implements Serializable {
         // Implementação do método para criar treino
     }
 
+
     public Usuario getUsuario() {
         return usuario;
     }
