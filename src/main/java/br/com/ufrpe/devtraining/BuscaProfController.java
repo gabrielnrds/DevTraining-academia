@@ -4,11 +4,12 @@ import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
 import java.io.IOException;
-import javafx.scene.control.Alert;
 
 public class BuscaProfController {
 
@@ -19,28 +20,34 @@ public class BuscaProfController {
     private Button BtnVoltarLogin;
 
     @FXML
-    private TextField TxtProcurarProfessor;
-
-    @FXML
-    private Label LblTurno;
-
-    @FXML
-    private Label LblSalario;
-
-    @FXML
-    private Label LblId;
-
-    @FXML
-    private Label LblEndereco;
+    private Label LblCPF;
 
     @FXML
     private Label LblEmail;
 
     @FXML
+    private Label LblEndereco;
+
+    @FXML
+    private Label LblId;
+
+    @FXML
     private Label LblIdade;
 
     @FXML
-    private Label TxtResultado;
+    private Label LblNome;
+
+    @FXML
+    private Label LblSalario;
+
+    @FXML
+    private Label LblTelefone;
+
+    @FXML
+    private Label LblTurno;
+
+    @FXML
+    private TextField TxtProcurarProfessor;
 
     @FXML
     void BuscarProfessor(ActionEvent event) {
@@ -51,6 +58,9 @@ public class BuscaProfController {
 
         if (professorEncontrado != null) {
             // Se o professor for encontrado, exibe suas informações nos Labels correspondentes
+            LblNome.setText(professorEncontrado.getNome());
+            LblCPF.setText(professorEncontrado.getCpf());
+            LblTelefone.setText(professorEncontrado.getTelefone());
             LblTurno.setText("" + professorEncontrado.getTurno());
             LblSalario.setText("" + professorEncontrado.getSalario());
             LblId.setText("" + professorEncontrado.getId());
