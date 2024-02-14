@@ -10,10 +10,10 @@ import java.io.IOException;
 public class CadastroMenuControle {
 
     @FXML
-    private Button BtnCadastroAluno;
+    private Button BtnCadProfessor;
 
     @FXML
-    private Button BtnDinheiro;
+    private Button BtnCadastroAluno;
 
     @FXML
     private Button BtnDinheiro1;
@@ -38,5 +38,9 @@ public class CadastroMenuControle {
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
     }
+    @FXML
+    void TelaCadastroProf(ActionEvent event) throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroProfessor.fxml")).load());
 
+    }
 }

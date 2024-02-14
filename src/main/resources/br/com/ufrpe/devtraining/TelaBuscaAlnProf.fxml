@@ -30,7 +30,7 @@
       </HBox>
       <Button fx:id="BtnBuscarAluno" layoutX="240.0" layoutY="191.0" mnemonicParsing="false" onAction="#TelaBuscaAln" prefHeight="151.0" prefWidth="222.0" style="-fx-background-color: #f78120;">
          <graphic>
-            <ImageView fitHeight="102.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="102.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../imagens/mulheres.png" />
                </image>

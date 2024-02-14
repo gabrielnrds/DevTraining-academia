@@ -34,7 +34,14 @@
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Button fx:id="BTNCasdastrar" layoutX="346.0" layoutY="485.0" mnemonicParsing="false" onAction="#CadastrarProfessor" prefHeight="44.0" prefWidth="251.0" style="-fx-background-color: #f78120;" />
+      <Button fx:id="BTNCasdastrar" layoutX="346.0" layoutY="485.0" mnemonicParsing="false" onAction="#CadastrarProfessor" prefHeight="44.0" prefWidth="251.0" style="-fx-background-color: #f78120;">
+         <graphic>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PROFESSOR">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </graphic></Button>
       <Text fill="#f78120" layoutX="231.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seu nome:" wrappingWidth="161.41917419433594">
          <font>
             <Font size="18.0" />
@@ -82,11 +89,6 @@
       <Text fill="#f78120" layoutX="527.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
          <font>
             <Font size="18.0" />
-         </font>
-      </Text>
-      <Text layoutX="354.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PROFESSOR">
-         <font>
-            <Font name="System Bold" size="20.0" />
          </font>
       </Text>
    </children>

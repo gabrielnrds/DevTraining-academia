@@ -97,7 +97,8 @@ public class CadastroControleProfessor {
             }
         }
 
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+        exibirAlertaMensagem("Cadastro de professor", "Professor cadastrado com sucesso!.");
     }
 
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
@@ -114,7 +115,7 @@ public class CadastroControleProfessor {
 
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroMenu.fxml")).load());
     }
 
 }

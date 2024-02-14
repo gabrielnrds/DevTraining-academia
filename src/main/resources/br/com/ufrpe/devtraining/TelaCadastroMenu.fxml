@@ -16,7 +16,14 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="BtnDinheiro" layoutX="142.0" layoutY="300.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;" />
+      <Button fx:id="BtnCadProfessor" layoutX="142.0" layoutY="300.0" mnemonicParsing="false" onAction="#TelaCadastroProf" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;">
+         <graphic>
+            <ImageView fitHeight="103.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../imagens/adicionar.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button fx:id="BtnDinheiro1" layoutX="142.0" layoutY="112.0" mnemonicParsing="false" onAction="#PagamentoConfirmado" prefHeight="146.0" prefWidth="186.0" style="-fx-background-color: #685e57;">
          <graphic>
             <ImageView fitHeight="124.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
@@ -52,12 +59,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="176.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="..." wrappingWidth="117.59999999999997">
+      <Text fill="WHITE" layoutX="617.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="..." wrappingWidth="117.59999999999997">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="617.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="..." wrappingWidth="117.59999999999997">
+      <Text fill="WHITE" layoutX="163.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR PROFESSOR" wrappingWidth="144.00002441406247">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
