@@ -2,8 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -27,6 +31,38 @@
             </Label>
          </children>
       </HBox>
-      <Text layoutX="401.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TELA BUSCA PROFESSOR" />
+      <Text layoutX="66.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TELA BUSCA PROFESSOR" />
+      <TextField fx:id="TxtProcurarProfessor" layoutX="229.0" layoutY="144.0" prefHeight="27.0" prefWidth="462.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="TxtResultado" layoutX="244.0" layoutY="262.0" prefHeight="229.0" prefWidth="413.0" text="Resultado" textOverrun="WORD_ELLIPSIS">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color opacity="0.8100000023841858" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="BtnBuscar" layoutX="344.0" layoutY="202.0" mnemonicParsing="false" onAction="#BuscarProfessor" prefHeight="40.0" prefWidth="258.0" style="-fx-background-color: #f78120;">
+         <graphic>
+            <Text fx:id="TxtBuscar" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
