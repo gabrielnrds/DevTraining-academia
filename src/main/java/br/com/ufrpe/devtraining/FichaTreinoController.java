@@ -41,6 +41,10 @@ public class FichaTreinoController implements Initializable {
         lbl_nome_cliente.setText("Nome: " + nomeCliente);
     }
 
+    public void setIdadeCliente(String idadeCliente) {
+        lbl_idade_cliente.setText("Idade: " + idadeCliente);
+    }
+
     public void VoltarTela(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
     }
