@@ -28,6 +28,8 @@ public class MenuNovoControler implements Initializable {
     @FXML
     private Button BtnVoltarLogin;
     @FXML
+    private Button BtnCadastroFicha;
+    @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaLogin.fxml")).load());
     } // Volta pra tela de login
@@ -59,6 +61,11 @@ public class MenuNovoControler implements Initializable {
     void TelaBuscarAlnProf(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaBuscaAlnProf.fxml")).load());
     }
+    @FXML
+    void TelaCadastroFicha(ActionEvent event)throws IOException{
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroTreino.fxml")).load());
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

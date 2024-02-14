@@ -51,10 +51,10 @@ public class BuscaProfController {
 
     @FXML
     void BuscarProfessor(ActionEvent event) {
-        String nomeProfessor = TxtProcurarProfessor.getText();
+        String cpfProfessor = TxtProcurarProfessor.getText();
 
         // Realiza a busca do professor pelo CPF
-        Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(nomeProfessor);
+        Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(cpfProfessor);
 
         if (professorEncontrado != null) {
             // Se o professor for encontrado, exibe suas informações nos Labels correspondentes

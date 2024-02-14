@@ -87,7 +87,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="LblEndereco" layoutX="244.0" layoutY="500.0" prefHeight="60.0" prefWidth="578.0" textFill="#ffffff">
+      <Label fx:id="LblEndereco" layoutX="244.0" layoutY="500.0" prefHeight="25.0" prefWidth="578.0" textFill="#ffffff">
          <font>
             <Font size="16.0" />
          </font>
