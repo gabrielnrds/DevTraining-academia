@@ -57,6 +57,15 @@
                   </Text>
                </graphic>
             </Button>
+            <Button fx:id="BtnExcluir" layoutX="5.0" layoutY="337.0" mnemonicParsing="false" onAction="#TelaExcluir" prefHeight="51.0" prefWidth="250.0" style="-fx-background-color: #f78120;">
+               <graphic>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EXCLUIR" wrappingWidth="90.40000000000009">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <Button fx:id="BtnImprimirFicha" layoutX="263.0" layoutY="86.0" mnemonicParsing="false" onAction="#TelaImprimirFicha" prefHeight="126.0" prefWidth="197.0" style="-fx-background-color: #685e57;" text="IMPRIMIR FICHA" textFill="WHITE">
