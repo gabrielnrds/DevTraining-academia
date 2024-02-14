@@ -48,9 +48,9 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void EntrarTelaCadastro(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastro.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroProfessor.fxml")).load());
     }
-
+//mudei pra teste
     @FXML
     void EntrarNaTelaMenu(ActionEvent event) throws IOException {
         String nomeUsuario = Texto1.getText();

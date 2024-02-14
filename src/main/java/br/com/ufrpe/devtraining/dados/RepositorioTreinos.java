@@ -2,11 +2,10 @@ package br.com.ufrpe.devtraining.dados;
 
 import br.com.ufrpe.devtraining.negocio.entidades.FichaTreino;
 
-import java.io.*;
+import java.io.Serializable;
 
 public class RepositorioTreinos implements Serializable {
     private FichaTreino[] fichasTreino;
-    private String arquivo ="Ficha_Treino.txt";
     private int proximo;
 
     public RepositorioTreinos(int tamanho) {
@@ -51,7 +50,6 @@ public class RepositorioTreinos implements Serializable {
         } else {
             System.out.println("Ficha de treino não encontrada.");
         }
-
     }
 
     public void alterar(int idTreino, FichaTreino novaFichaTreino) {
@@ -72,11 +70,7 @@ public class RepositorioTreinos implements Serializable {
         } else {
             System.out.println("Ficha de treino não encontrada. Não foi possível realizar a alteração.");
         }
-
     }
-
-
-
 
     public FichaTreino[] getFichasTreino() {
         return fichasTreino;
