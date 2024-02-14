@@ -1,6 +1,6 @@
 package br.com.ufrpe.devtraining;
 
-import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
+import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
-public class ExcluirController {
+public class ExcluirProfController {
 
     @FXML
     private Button BtnBuscar;
@@ -18,25 +18,25 @@ public class ExcluirController {
     private Button BtnVoltarLogin;
 
     @FXML
-    private TextField TxtProcurarAluno;
+    private TextField TxtProcurarProfessor;
 
     @FXML
-    void BuscarAluno(ActionEvent event) {
-        String cpfAluno = TxtProcurarAluno.getText();
+    void BuscarProfessor(ActionEvent event) {
+        String cpfProfessor = TxtProcurarProfessor.getText();
 
-        // Realiza a busca do cliente pelo CPF
-        Cliente clienteEncontrado = Main.repositorioGeral.getRepositorioClientes().buscar(cpfAluno);
+        // Realiza a busca do professor pelo CPF
+        Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(cpfProfessor);
 
-        if (clienteEncontrado != null) {
-            // Remove o cliente encontrado
-            Main.repositorioGeral.getRepositorioClientes().remover(cpfAluno);
+        if (professorEncontrado != null) {
+            // Remove o professor encontrado
+            Main.repositorioGeral.getRepositorioProfessores().remover(cpfProfessor);
 
             // Limpa o campo e mostra uma mensagem de sucesso
-            TxtProcurarAluno.setText("");
-            mostrarAlerta("Cliente excluído com sucesso.");
+            TxtProcurarProfessor.setText("");
+            mostrarAlerta("Professor excluído com sucesso.");
         } else {
-            // Se o cliente não for encontrado, exibe uma mensagem de alerta
-            mostrarAlerta("Nenhum cliente encontrado com o CPF fornecido.");
+            // Se o professor não for encontrado, exibe uma mensagem de alerta
+            mostrarAlerta("Nenhum professor encontrado com o CPF fornecido.");
         }
     }
 
