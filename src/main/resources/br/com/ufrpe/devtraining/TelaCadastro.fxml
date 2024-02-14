@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroControle">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroControle">
    <children>
       <TextField fx:id="txtEmail" layoutX="542.0" layoutY="312.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <TextField fx:id="txtIdade" layoutX="542.0" layoutY="246.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
@@ -34,7 +40,10 @@
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Button fx:id="BTNCasdastrar" layoutX="447.0" layoutY="386.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="Cadastrar" />
+      <Button fx:id="BTNCasdastrar" layoutX="433.0" layoutY="386.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="Cadastrar">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
       <Text fill="#f78120" layoutX="232.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite seu nome:" wrappingWidth="161.41917419433594">
          <font>
             <Font size="18.0" />
@@ -46,9 +55,9 @@
          </image>
       </ImageView>
       <PasswordField fx:id="txtSenha" layoutX="231.0" layoutY="339.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
-      <Button fx:id="BtnVoltarCadastro" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="18.0" layoutY="69.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f78120;" text="Voltar" textAlignment="CENTER">
+      <Button fx:id="BtnVoltarCadastro" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="18.0" layoutY="69.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f78120;" text="VOLTAR">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Button>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;">

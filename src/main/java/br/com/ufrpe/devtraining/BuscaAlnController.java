@@ -62,7 +62,7 @@ public class BuscaAlnController {
         Alert alerta = new Alert(Alert.AlertType.WARNING);
         alerta.setTitle("Nenhum aluno encontrado");
         alerta.setHeaderText(null);
-        alerta.setContentText("Nenhum aluno encontrado com o nome fornecido.");
+        alerta.setContentText("Nenhum aluno encontrado com o CPF fornecido.");
         alerta.showAndWait();
     }
 }

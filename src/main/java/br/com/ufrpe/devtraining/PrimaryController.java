@@ -79,7 +79,7 @@ public class PrimaryController implements Initializable {
         System.out.println("Usuário encontrado? " + usuarioEncontrado);
 
         if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário não encontrado!");
+            exibirAlertaMensagem("Erro", "Usuário e Senha não encontrados!");
         }
     }
 
