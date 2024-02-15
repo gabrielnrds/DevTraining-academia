@@ -18,7 +18,7 @@ public class ExcluirAlnProfController {
     @FXML
     private Button BtnVoltarLogin;
     @FXML
-    void TelaBuscaProf(ActionEvent event) throws IOException {
+    void TelaExcluirProf(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaExcluirProf.fxml")).load());
     }
 

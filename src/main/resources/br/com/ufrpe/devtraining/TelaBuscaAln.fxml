@@ -10,28 +10,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.BuscaAlnController">
    <children>
-      <Button fx:id="BtnVoltarLogin" layoutX="31.0" layoutY="66.0" mnemonicParsing="false" onAction="#VoltarTelaBusca" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f78120;">
-         <graphic>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VOLTAR">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Text>
-         </graphic>
+      <Button fx:id="BtnVoltarLogin" layoutX="18.0" layoutY="69.0" mnemonicParsing="false" onAction="#VoltarTelaBusca" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f78120;" text="VOLTAR">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
       </Button>
       <TextField fx:id="TxtProcurarAluno" layoutX="275.0" layoutY="141.0" prefHeight="25.0" prefWidth="410.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="BtnBuscar" layoutX="410.0" layoutY="194.0" mnemonicParsing="false" onAction="#BuscarAluno" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #f78120;">
-         <graphic>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR ALUNO">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-         </graphic>
+      <Button fx:id="BtnBuscar" layoutX="410.0" layoutY="194.0" mnemonicParsing="false" onAction="#BuscarAluno" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #f78120;" text="BUSCAR ALUNO">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
       </Button>
       <Label fx:id="LblNomeAluno" layoutX="275.0" layoutY="255.0" prefHeight="27.0" prefWidth="410.0" style="-fx-border-color: #f78120;" textFill="#ffffff">
          <font>
@@ -48,7 +40,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="TxtResultado" layoutX="275.0" layoutY="336.0" prefHeight="27.0" prefWidth="410.0" style="-fx-border-color: #f78120;" textFill="#ffffff">
+      <Label fx:id="LblNomeProfessor" layoutX="275.0" layoutY="336.0" prefHeight="27.0" prefWidth="410.0" style="-fx-border-color: #f78120;" textFill="#ffffff">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -62,5 +54,10 @@
             </Label>
          </children>
       </HBox>
+      <Text layoutX="275.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o CPF:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
