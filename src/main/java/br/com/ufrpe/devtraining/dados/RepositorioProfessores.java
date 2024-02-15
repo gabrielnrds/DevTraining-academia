@@ -103,14 +103,6 @@ public class RepositorioProfessores implements Serializable {
 
     }
 
-    public Professor buscarPorNome(String nome) {
-        for (int i = 0; i < this.proxima; i++) {
-            if (this.professores[i].getNome().equalsIgnoreCase(nome)) {
-                return this.professores[i];
-            }
-        }
-        return null;
-    }
 
 
     public Professor[] getProfessores() {
