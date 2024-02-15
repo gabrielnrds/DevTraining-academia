@@ -4,6 +4,7 @@ import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
 import br.com.ufrpe.devtraining.negocio.entidades.Professor;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
@@ -14,10 +15,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import static br.com.ufrpe.devtraining.PrimaryController.getClienteLogado;
 
-public class ImpriFichaController {
+public class ImpriFichaController implements Initializable {
 
     @FXML
     private Button BtnImprimirTreino;
@@ -59,14 +62,11 @@ public class ImpriFichaController {
                     usuarioEncontrado = true;
                     FXMLLoader loader = new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml"));
                     Parent root = loader.load();
-
-                    // Obtém o controlador da tela de impressão
                     FichaTreinoController controller = loader.getController();
 
-                    // Define o nome do cliente no controlador da tela de impressão
+                    //define o nome do cliente no controlador da tela de impressão
                     controller.setNomeCliente(nomeCliente);
 
-                    // Verifica se o clienteLogado não é null antes de definir a idade
                     if (clienteLogado != null) {
                         controller.setIdadeCliente(clienteLogado.getIdade());
                     }
@@ -82,13 +82,6 @@ public class ImpriFichaController {
         if (!usuarioEncontrado) {
             exibirAlertaMensagem("Erro", "Usuário não encontrado!");
         }
-
-
-        System.out.println("Usuário encontrado? " + usuarioEncontrado);
-
-        if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário não encontrado!");
-        }
     }
 
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
@@ -98,5 +91,10 @@ public class ImpriFichaController {
         alerta.setContentText(mensagem);
 
         alerta.showAndWait();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //BtnVoltarFicha.setDisable(true); // Desabilita o botão de voltar
     }
 }

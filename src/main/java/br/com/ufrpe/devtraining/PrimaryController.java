@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
-import br.com.ufrpe.devtraining.negocio.entidades.Professor;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +17,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
 
 public class PrimaryController implements Initializable {
     @FXML
@@ -44,7 +42,9 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private Text textsenha;
+
     private static Cliente clienteLogado;
+    private boolean botaoVoltarDesabilitado = true; // Inicialmente desabilitado
 
     @FXML
     void EntrarTelaCadastro(ActionEvent event) throws IOException {
@@ -58,32 +58,19 @@ public class PrimaryController implements Initializable {
 
         boolean usuarioEncontrado = false;
 
-        // Percorre os usuários no repositório
-        for (Usuario usuario : Main.repositorioGeral.getUsuarioRepositorio().getUsuarioRepositorio()) {
-            // Verifica se o usuário atual não é nulo antes de acessar seus atributos
-            if (usuario != null) {
-                if (nomeUsuario.equals(usuario.getNomeUsuario()) && senhaUsuario.equals(usuario.getSenha())) {
-                    // Define o cliente logado
-                    clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
-                    if (getClienteLogado() != null) {
-                        System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
-                    }
-
-                    usuarioEncontrado = true;
-                    Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
-                    break;
-                }
-            }
+        //Verificamos se é um aluno ou admin acessando
+        if ("admin".equals(nomeUsuario) && "123".equals(senhaUsuario)) {
+            Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+            usuarioEncontrado = true;
+        } else if ("aluno".equals(nomeUsuario) && "123".equals(senhaUsuario)) {
+            Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
+            usuarioEncontrado = true;
         }
-
-        System.out.println("Usuário encontrado? " + usuarioEncontrado);
 
         if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário não encontrado!");
+            exibirAlertaMensagem("Erro", "Usuário e senha não encontrados!");
         }
     }
-
-
 
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -94,14 +81,11 @@ public class PrimaryController implements Initializable {
         alerta.showAndWait();
     }
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Usuario usuario = new Usuario("vini","123");
-        Professor professor= new Professor("vini","81","email@","705","rua","20","tarde",1000,usuario);
-        Cliente cliente = new Cliente("Paulo","81","email@","7","rua","34",professor,true,usuario);
-        Main.repositorioGeral.getRepositorioProfessores().cadastrar(professor);
-        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(usuario);
-        Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
+        Usuario admin = new Usuario("admin", "123");
+        Usuario aluno = new Usuario("aluno", "123");
+        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(admin);
+        Main.repositorioGeral.getUsuarioRepositorio().cadastrar(aluno);
 
     }
 

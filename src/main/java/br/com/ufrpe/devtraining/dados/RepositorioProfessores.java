@@ -46,6 +46,15 @@ public class RepositorioProfessores implements Serializable {
         return null;
     }
 
+    public Professor buscarPeloNome(String nome) {
+        for (int i = 0; i < this.proxima; i++) {
+            if (this.professores[i].getNome().equalsIgnoreCase(nome)) {
+                return this.professores[i];
+            }
+        }
+        return null;
+    }
+
     // Método para remover
     public void remover(String cpf) {
         int i = 0;
