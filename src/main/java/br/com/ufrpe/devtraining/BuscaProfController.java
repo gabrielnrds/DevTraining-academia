@@ -57,7 +57,6 @@ public class BuscaProfController {
         Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(cpfProfessor);
 
         if (professorEncontrado != null) {
-            // Se o professor for encontrado, exibe suas informações nos Labels correspondentes
             LblNome.setText(professorEncontrado.getNome());
             LblCPF.setText(professorEncontrado.getCpf());
             LblTelefone.setText(professorEncontrado.getTelefone());

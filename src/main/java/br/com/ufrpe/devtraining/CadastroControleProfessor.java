@@ -61,14 +61,14 @@ public class CadastroControleProfessor {
         String salarioText = txtSalario.getText();
         String senha = txtSenha.getText();
 
-        // Verifica se algum dos campos está vazio
+        //Verifica se algum dos campos está vazio
         if (nome.isEmpty() || telefone.isEmpty() || email.isEmpty() || cpf.isEmpty() ||
                 endereco.isEmpty() || idade.isEmpty() || turno.isEmpty() || salarioText.isEmpty() || senha.isEmpty()) {
             exibirAlertaMensagem("Erro de Validação", "Por favor, preencha todos os campos.");
             return;
         }
 
-        // Verifica se o campo de salário não está vazio e se é um número válido
+        //verifica se o campo de salário não está vazio e se é um número válido
         double salario;
         try {
             salario = Double.parseDouble(salarioText);
@@ -76,7 +76,7 @@ public class CadastroControleProfessor {
             exibirAlertaMensagem("Erro de Validação", "O salário informado não é um número válido.");
             return;
         }
-        // Verifica se o CPF já está cadastrado
+        //vrifica se o CPF já está cadastrado
         if (Main.repositorioGeral.getRepositorioProfessores().existeProfessorComCpf(cpf)) {
             exibirAlertaMensagem("Erro de Validação", "CPF já cadastrado.");
             return;
@@ -102,7 +102,7 @@ public class CadastroControleProfessor {
     }
 
     public static void exibirAlertaMensagem(String titulo, String mensagem) {
-        System.out.println("Exibindo alerta: " + mensagem); // Adicionando instrução de debug
+        System.out.println("Exibindo alerta: " + mensagem);
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle(titulo);
         alerta.setHeaderText(null); //sem cabeçalho adicional

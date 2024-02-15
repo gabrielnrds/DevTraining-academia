@@ -29,7 +29,6 @@ public class PagamentoController {
 
     @FXML
     void PagamentoConfirmado(ActionEvent event) {
-        // Exibir um alerta de pagamento confirmado
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Pagamento Confirmado");
         alert.setHeaderText(null);
@@ -39,7 +38,6 @@ public class PagamentoController {
 
     @FXML
     void LiberarCatraca(ActionEvent event) {
-        // Exibir um alerta de catraca liberada
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Catraca Liberada");
         alert.setHeaderText(null);

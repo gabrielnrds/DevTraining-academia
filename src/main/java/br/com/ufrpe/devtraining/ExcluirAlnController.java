@@ -23,19 +23,13 @@ public class ExcluirAlnController {
     @FXML
     void BuscarAluno(ActionEvent event) {
         String cpfAluno = TxtProcurarAluno.getText();
-
-        // Realiza a busca do cliente pelo CPF
         Cliente clienteEncontrado = Main.repositorioGeral.getRepositorioClientes().buscar(cpfAluno);
 
         if (clienteEncontrado != null) {
-            // Remove o cliente encontrado
             Main.repositorioGeral.getRepositorioClientes().remover(cpfAluno);
-
-            // Limpa o campo e mostra uma mensagem de sucesso
             TxtProcurarAluno.setText("");
             mostrarAlerta("Cliente excluído com sucesso.");
         } else {
-            // Se o cliente não for encontrado, exibe uma mensagem de alerta
             mostrarAlerta("Nenhum cliente encontrado com o CPF fornecido.");
         }
     }

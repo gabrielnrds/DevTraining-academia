@@ -62,14 +62,11 @@ public class ImpriFichaController implements Initializable {
                     usuarioEncontrado = true;
                     FXMLLoader loader = new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml"));
                     Parent root = loader.load();
-
-                    // Obtém o controlador da tela de impressão
                     FichaTreinoController controller = loader.getController();
 
-                    // Define o nome do cliente no controlador da tela de impressão
+                    //define o nome do cliente no controlador da tela de impressão
                     controller.setNomeCliente(nomeCliente);
 
-                    // Verifica se o clienteLogado não é null antes de definir a idade
                     if (clienteLogado != null) {
                         controller.setIdadeCliente(clienteLogado.getIdade());
                     }

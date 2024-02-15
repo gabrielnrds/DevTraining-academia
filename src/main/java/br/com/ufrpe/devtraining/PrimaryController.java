@@ -58,19 +58,17 @@ public class PrimaryController implements Initializable {
 
         boolean usuarioEncontrado = false;
 
-        // Verifica se é admin
+        //Verificamos se é um aluno ou admin acessando
         if ("admin".equals(nomeUsuario) && "123".equals(senhaUsuario)) {
-            // Se o usuário for admin, abre a tela de menu
             Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
             usuarioEncontrado = true;
         } else if ("aluno".equals(nomeUsuario) && "123".equals(senhaUsuario)) {
-            // Se o usuário for aluno, vai diretamente para a tela de impressão de fichas
             Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
             usuarioEncontrado = true;
         }
 
         if (!usuarioEncontrado) {
-            exibirAlertaMensagem("Erro", "Usuário e Senha não encontrados!");
+            exibirAlertaMensagem("Erro", "Usuário e senha não encontrados!");
         }
     }
 
@@ -84,13 +82,11 @@ public class PrimaryController implements Initializable {
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Cadastrando os usuários durante a inicialização
         Usuario admin = new Usuario("admin", "123");
         Usuario aluno = new Usuario("aluno", "123");
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(admin);
         Main.repositorioGeral.getUsuarioRepositorio().cadastrar(aluno);
 
-        // Como o botão BtnVoltarFicha não está presente nesta classe, não é necessário desabilitá-lo aqui.
     }
 
     public static Cliente getClienteLogado() {

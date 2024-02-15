@@ -24,18 +24,14 @@ public class ExcluirProfController {
     void BuscarProfessor(ActionEvent event) {
         String cpfProfessor = TxtProcurarProfessor.getText();
 
-        // Realiza a busca do professor pelo CPF
         Professor professorEncontrado = Main.repositorioGeral.getRepositorioProfessores().buscar(cpfProfessor);
 
         if (professorEncontrado != null) {
-            // Remove o professor encontrado
             Main.repositorioGeral.getRepositorioProfessores().remover(cpfProfessor);
 
-            // Limpa o campo e mostra uma mensagem de sucesso
             TxtProcurarProfessor.setText("");
             mostrarAlerta("Professor excluído com sucesso.");
         } else {
-            // Se o professor não for encontrado, exibe uma mensagem de alerta
             mostrarAlerta("Nenhum professor encontrado com o CPF fornecido.");
         }
     }

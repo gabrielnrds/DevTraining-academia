@@ -46,13 +46,11 @@ public class BuscaAlnController {
         Cliente alunoEncontrado = Main.repositorioGeral.getRepositorioClientes().buscar(nomeAluno);
 
         if (alunoEncontrado != null) {
-            // Se o aluno for encontrado, exibe suas informações nos Labels correspondentes
             LblNomeAluno.setText("Nome: " + alunoEncontrado.getNome());
             LblIdadeAluno.setText("Idade: " + alunoEncontrado.getIdade());
             LblEmailAluno.setText("E-mail: " + alunoEncontrado.getEmail());
             LblNomeProfessor.setText("Professor: " + alunoEncontrado.getProfessor());
         } else {
-            // Se o aluno não for encontrado, exibe uma mensagem de alerta
             mostrarAlertaNenhumAlunoEncontrado();
         }
     }
