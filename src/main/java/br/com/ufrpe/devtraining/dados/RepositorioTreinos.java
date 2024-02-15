@@ -84,6 +84,16 @@ public class RepositorioTreinos implements Serializable {
         }
         return fichasEncontradas;
     }
+    public void removerPorNomeCliente(String nomeCliente) {
+        for (int i = 0; i < this.proximo; i++) {
+            if (this.fichasTreino[i].getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
+
+                this.remover(this.fichasTreino[i].getIdTreino());
+                return;
+            }
+        }
+        System.out.println("Nenhuma ficha de treino encontrada para o cliente especificado: " + nomeCliente);
+    }
 
 
     public FichaTreino[] getFichasTreino() {
