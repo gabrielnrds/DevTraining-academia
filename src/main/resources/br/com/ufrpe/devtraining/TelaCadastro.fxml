@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -17,21 +11,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroControle">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroControle">
    <children>
-      <TextField fx:id="txtEmail" layoutX="542.0" layoutY="312.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
-      <TextField fx:id="txtIdade" layoutX="542.0" layoutY="246.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtEmail" layoutX="542.0" layoutY="286.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtIdade" layoutX="542.0" layoutY="226.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <TextField fx:id="txtNome" layoutX="231.0" layoutY="226.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
       <Text layoutX="184.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="48.0" />
       <Text fill="#f78120" layoutX="229.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite sua senha:">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Text fill="#f78120" layoutX="544.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade:">
+      <Text fill="#f78120" layoutX="543.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade:">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Text fill="#f78120" layoutX="541.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+      <Text fill="#f78120" layoutX="541.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
          <font>
             <Font size="18.0" />
          </font></Text>
@@ -40,7 +34,7 @@
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Button fx:id="BTNCasdastrar" layoutX="433.0" layoutY="386.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="Cadastrar">
+      <Button fx:id="BTNCasdastrar" layoutX="420.0" layoutY="392.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="Cadastrar">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>
@@ -69,5 +63,11 @@
             </Label>
          </children>
       </HBox>
+      <TextField fx:id="txtNomeProfessor" layoutX="543.0" layoutY="339.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Text fill="#f78120" layoutX="541.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Professor:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
