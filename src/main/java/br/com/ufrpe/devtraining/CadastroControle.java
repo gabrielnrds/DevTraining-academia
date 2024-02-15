@@ -64,13 +64,13 @@ public class CadastroControle implements Initializable {
             System.out.println("Professor não encontrado.");
         }
     }
+
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        }
     }
-
-
+}

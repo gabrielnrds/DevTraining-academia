@@ -45,12 +45,36 @@ public class FichaTreinoController implements Initializable {
         lbl_idade_cliente.setText("Idade: " + idadeCliente);
     }
 
+    public void setNomeProfessor(String nomeProfessor){
+        lbl_nome_professor.setText("Professor: " + nomeProfessor);
+    }
+
     public void VoltarTela(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Verifique se há um cliente logado
+        if (clienteLogado != null) {
+            // Defina o nome do cliente
+            lbl_nome_cliente.setText("Nome: " + clienteLogado.getNome());
 
+            // Defina a idade do cliente
+            lbl_idade_cliente.setText("Idade: " + clienteLogado.getIdade());
+
+            // Verifique se o cliente tem um professor associado
+            if (clienteLogado.getProfessor() != null) {
+                // Defina o nome do professor
+                lbl_nome_professor.setText("Professor: " + clienteLogado.getProfessor());
+            } else {
+                // Se o cliente não tiver um professor associado, exiba uma mensagem indicando isso
+                lbl_nome_professor.setText("Professor não vinculado");
+            }
+        }
+    }
+
+    public static void setClienteLogado(Cliente cliente) {
+        clienteLogado = cliente;
     }
 }
