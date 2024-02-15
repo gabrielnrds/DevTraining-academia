@@ -24,20 +24,6 @@ public class Usuario implements Serializable {
         return proximoId;
     }
 
-    public void login() {
-        System.out.println("Usuário logado: " + nomeUsuario);
-    }
-
-    public void deslogar() {
-        System.out.println("Usuário deslogado: " + nomeUsuario);
-    }
-
-    public void alterarLogin(String novoNomeUsuario, String novaSenha) {
-        this.nomeUsuario = novoNomeUsuario;
-        this.senha = novaSenha;
-        System.out.println("Login alterado para: " + nomeUsuario);
-    }
-
     public String getNomeUsuario() {
         return nomeUsuario;
     }

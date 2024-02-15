@@ -8,9 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.net.URL;
@@ -49,7 +51,7 @@ public class CadastroControle implements Initializable {
         if (professor != null) {
             //vinculando o professor ao cliente
             Usuario usuario = new Usuario(txtNome.getText(), txtSenha.getText());
-            Cliente cliente = new Cliente(txtNome.getText(), "4", txtEmail.getText(), txtCpf.getText(), "rua", txtIdade.getText(),professor, true, usuario);
+            Cliente cliente = new Cliente(txtNome.getText(), "4", txtEmail.getText(), txtCpf.getText(), "rua", txtIdade.getText(), professor, true, usuario);
 
             //cadastro  do cliente e do usuário nos repositórios
             Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);
@@ -57,11 +59,19 @@ public class CadastroControle implements Initializable {
 
             Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());
         } else {
-            //Se o professor não foi encontrado, exiba uma mensagem de erro
-            System.out.println("Professor não encontrado.");
+            exibirAlertaMensagem("Erro!", "Professor não encontrado!");
         }
-    }
+            {
+            }
+        }
 
+
+    public static void exibirAlertaMensagem(String titulo, String mensagem) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null); //sem cabeçalho adicional
+        alerta.setContentText(mensagem);
+    }
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("telaMenuNova.fxml")).load());

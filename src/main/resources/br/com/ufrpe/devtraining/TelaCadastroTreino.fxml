@@ -5,22 +5,57 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroFichaTreinoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: #4f4842;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.devtraining.CadastroFichaTreinoController">
    <children>
-      <Label layoutX="25.0" layoutY="29.0" text="Nome do Cliente:" />
-      <Label layoutX="25.0" layoutY="64.0" text="CPF do Professor:" />
-      <Label layoutX="25.0" layoutY="99.0" text="Nome do Exercício:" />
-      <Label layoutX="25.0" layoutY="134.0" text="Séries:" />
-      <Label layoutX="25.0" layoutY="169.0" text="Repetições:" />
-      <Label layoutX="25.0" layoutY="204.0" text="Tipo de Lista:" />
-      <TextField fx:id="txtNomeCliente" layoutX="157.0" layoutY="25.0" prefWidth="200.0" />
-      <TextField fx:id="txtNomeProfessor" layoutX="157.0" layoutY="60.0" prefWidth="200.0" />
-      <TextField fx:id="txtNomeExercicio" layoutX="157.0" layoutY="95.0" prefWidth="200.0" />
-      <TextField fx:id="txtSeries" layoutX="157.0" layoutY="130.0" prefWidth="200.0" />
-      <TextField fx:id="txtRepeticoes" layoutX="157.0" layoutY="165.0" prefWidth="200.0" />
-      <ChoiceBox fx:id="choiceBoxTipoLista" layoutX="157.0" layoutY="200.0" prefWidth="150.0" />
-      <Button layoutX="300.0" layoutY="250.0" mnemonicParsing="false" onAction="#adicionarExercicio" text="Adicionar" />
-      <Button fx:id="BtnVoltar" layoutX="46.0" layoutY="250.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" text="Voltar" />
+      <Label layoutX="241.0" layoutY="146.0" text="Nome do Cliente:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="241.0" layoutY="181.0" text="CPF do Professor:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="235.0" layoutY="216.0" text="Nome do Exercício:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="316.0" layoutY="253.0" text="Séries:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="286.0" layoutY="290.0" text="Repetições:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="581.0" layoutY="263.0" text="Tipo de treino:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txtNomeCliente" layoutX="366.0" layoutY="143.0" prefWidth="200.0" style="-fx-border-color: #f78120; -fx-background-color: transparent; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtNomeProfessor" layoutX="366.0" layoutY="178.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtNomeExercicio" layoutX="366.0" layoutY="213.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtSeries" layoutX="366.0" layoutY="250.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="txtRepeticoes" layoutX="366.0" layoutY="287.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <ChoiceBox fx:id="choiceBoxTipoLista" layoutX="581.0" layoutY="287.0" prefHeight="18.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #f78120; -fx-text-fill: #ffffff;" />
+      <Button layoutX="433.0" layoutY="331.0" mnemonicParsing="false" onAction="#adicionarExercicio" style="-fx-background-color: #f78120;" text="Adicionar">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="BtnVoltar" layoutX="24.0" layoutY="75.0" mnemonicParsing="false" onAction="#VoltarTelaMenu" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f78120;" text="Voltar">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Button>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="960.0" style="-fx-background-color: #f78120;">
+         <children>
+            <Label text="DevTraining" textFill="#4f4842">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

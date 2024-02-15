@@ -55,9 +55,6 @@ public class ImpriFichaController implements Initializable {
             if (usuario != null) {
                 if (nomeCliente.equals(usuario.getNomeUsuario())) {
                     clienteLogado = Main.repositorioGeral.getRepositorioClientes().clienteUsuario(usuario);
-                    if (getClienteLogado() != null) {
-                        System.out.println(getClienteLogado().getUsuario().getNomeUsuario());
-                    }
 
                     usuarioEncontrado = true;
                     FXMLLoader loader = new FXMLLoader(Main.class.getResource("fichaTreinoImpressao.fxml"));
@@ -95,6 +92,8 @@ public class ImpriFichaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //BtnVoltarFicha.setDisable(true); // Desabilita o botão de voltar
+        if(getClienteLogado() instanceof Cliente){
+            BtnVoltarFicha.setDisable(true);
+        }//BtnVoltarFicha.setDisable(true); // Desabilita o botão de voltar
     }
 }

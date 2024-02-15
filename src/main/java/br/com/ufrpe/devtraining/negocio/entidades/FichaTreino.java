@@ -102,8 +102,8 @@ public class FichaTreino implements Serializable {
             for (Exercicio exercicio : exercicios) {
                 resultado.append(tipo).append(": ");
                 resultado.append(exercicio.getNome()).append(" - ");
-                resultado.append("Séries: ").append(exercicio.getSeries()).append(", ");
-                resultado.append("Repetições: ").append(exercicio.getRepeticoes()).append("\n");
+                resultado.append(": ").append(exercicio.getSeries()).append(", ");
+                resultado.append(": ").append(exercicio.getRepeticoes()).append("\n");
             }
         }
         return resultado.toString();

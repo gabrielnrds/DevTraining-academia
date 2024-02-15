@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import br.com.ufrpe.devtraining.dados.RepositorioGeral;
 import br.com.ufrpe.devtraining.negocio.entidades.Cliente;
+import br.com.ufrpe.devtraining.negocio.entidades.Pessoa;
 import br.com.ufrpe.devtraining.negocio.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,13 +44,7 @@ public class PrimaryController implements Initializable {
     @FXML
     private Text textsenha;
 
-    private static Cliente clienteLogado;
-    private boolean botaoVoltarDesabilitado = true; // Inicialmente desabilitado
-
-    @FXML
-    void EntrarTelaCadastro(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaCadastroProfessor.fxml")).load());
-    }
+    private static Pessoa clienteLogado;
 
     @FXML
     void EntrarNaTelaMenu(ActionEvent event) throws IOException {
@@ -89,7 +84,7 @@ public class PrimaryController implements Initializable {
 
     }
 
-    public static Cliente getClienteLogado() {
+    public static Pessoa getClienteLogado() {
         return clienteLogado;
     }
 }

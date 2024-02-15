@@ -40,10 +40,10 @@ public class IDManager implements Serializable {
         return lastUsuarioID;
     }
 
-    // Dentro do método setLastUsuarioID():
+    //dentro do método setLastUsuarioID():
     public void setLastUsuarioID(int lastUsuarioID) {
         this.lastUsuarioID = lastUsuarioID;
-        saveLastUsuarioID(); // Salva o último ID do usuário após atualizá-lo
+        saveLastUsuarioID(); //salva o último ID do usuário após atualizá-lo
     }
 
     public void setLastTreinoID(int lastTreinoID) {

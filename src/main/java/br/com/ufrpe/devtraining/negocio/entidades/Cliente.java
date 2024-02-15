@@ -33,7 +33,7 @@ public class Cliente extends Pessoa implements Serializable {
     private String gerarNovoID() {
         int novoID = idManager.getLastClientID() + 1;
         idManager.setLastClientID(novoID);
-        idManager.saveLastClientID(); // Salvar o novo ID
+        idManager.saveLastClientID(); //salvar o novo ID
         return  novoID + "C";
     }
 

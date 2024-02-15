@@ -38,7 +38,7 @@ public class ExcluirProfController {
 
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaExcluirAlnProf.fxml")).load());
     }
 
     private void mostrarAlerta(String mensagem) {

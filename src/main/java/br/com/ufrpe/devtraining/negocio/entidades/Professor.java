@@ -80,9 +80,6 @@ public class Professor extends Pessoa implements Serializable {
     }
 
 
-    public void criarTreino(String treino) {
-        // Implementação do método para criar treino
-    }
 
 
     public Usuario getUsuario() {
