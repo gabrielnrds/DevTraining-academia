@@ -40,7 +40,7 @@
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Button fx:id="BTNCasdastrar" layoutX="433.0" layoutY="386.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="Cadastrar">
+      <Button fx:id="BTNCasdastrar" layoutX="422.0" layoutY="387.0" mnemonicParsing="false" onAction="#CadastrarUsu" style="-fx-background-color: #f78120;" text="CADASTRAR">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>
