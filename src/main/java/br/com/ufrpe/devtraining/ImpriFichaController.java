@@ -95,6 +95,6 @@ public class ImpriFichaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        BtnVoltarFicha.setDisable(true); // Desabilita o botão de voltar
+        //BtnVoltarFicha.setDisable(true); // Desabilita o botão de voltar
     }
 }
