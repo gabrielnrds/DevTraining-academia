@@ -95,6 +95,14 @@ public class RepositorioClientes implements Serializable  {
 
 
     }
+    public Cliente buscarPorNome(String nome) {
+        for (int i = 0; i < proxima; i++) {
+            if (clientes[i].getNome().equalsIgnoreCase(nome)) {
+                return clientes[i];
+            }
+        }
+        return null; // Retorna null se nenhum cliente com o nome fornecido for encontrado
+    }
 
 
 

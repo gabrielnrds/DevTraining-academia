@@ -1,6 +1,8 @@
 package br.com.ufrpe.devtraining.negocio.entidades;
 
-public class Exercicio {
+import java.io.Serializable;
+
+public class Exercicio implements Serializable {
     private String nome;
     private int series;
     private int repeticoes;
@@ -44,3 +46,4 @@ public class Exercicio {
                 '}';
     }
 }
+

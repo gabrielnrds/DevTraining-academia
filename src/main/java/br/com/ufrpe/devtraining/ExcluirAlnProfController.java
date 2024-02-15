@@ -11,6 +11,9 @@ public class ExcluirAlnProfController {
 
     @FXML
     private Button BtnExcluirAluno;
+    @FXML
+    private Button BtnExcluirFicha;
+
 
     @FXML
     private Button BtnExcluirProf;
@@ -30,6 +33,10 @@ public class ExcluirAlnProfController {
     @FXML
     void VoltarTelaMenu(ActionEvent event) throws IOException {
         Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaMenuNova.fxml")).load());
+    }
+    @FXML
+    void TelaExcluirFicha(ActionEvent event)throws IOException {
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaExcluirTreino.fxml")).load());
     }
 
 }

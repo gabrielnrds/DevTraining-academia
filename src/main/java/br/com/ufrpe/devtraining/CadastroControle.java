@@ -49,7 +49,7 @@ public class CadastroControle implements Initializable {
         if (professor != null) {
             //vinculando o professor ao cliente
             Usuario usuario = new Usuario(txtNome.getText(), txtSenha.getText());
-            Cliente cliente = new Cliente(txtNome.getText(), "4", txtEmail.getText(), txtCpf.getText(), "rua", txtIdade.getText(), professor, true, usuario);
+            Cliente cliente = new Cliente(txtNome.getText(), "4", txtEmail.getText(), txtCpf.getText(), "rua", txtIdade.getText(),professor, true, usuario);
 
             //cadastro  do cliente e do usuário nos repositórios
             Main.repositorioGeral.getRepositorioClientes().cadastrar(cliente);

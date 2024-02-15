@@ -116,4 +116,15 @@ public class FichaTreino implements Serializable {
         }
         return total;
     }
+    public List<Exercicio> getExerciciosTipoA() {
+        return exerciciosPorTipo.getOrDefault("A", new ArrayList<>());
+    }
+    public List<Exercicio> getExerciciosTipoB() {
+        return exerciciosPorTipo.getOrDefault("B", new ArrayList<>());
+    }
+    public List<Exercicio> getExerciciosTipoC() {
+        return exerciciosPorTipo.getOrDefault("C", new ArrayList<>());
+    }
+
+
 }

@@ -44,7 +44,7 @@ public class CadastroFichaTreinoController {
     @FXML
     void initialize() {
         choiceBoxTipoLista.getItems().addAll("A", "B", "C");
-        choiceBoxTipoLista.setValue("A"); // Define "A" como padrão
+        choiceBoxTipoLista.setValue("A");
     }
 
     @FXML
@@ -69,13 +69,9 @@ public class CadastroFichaTreinoController {
                     fichaTreino = new FichaTreino(professor, cliente, tipoLista);
                 }
 
-                // Adiciona o exercício à ficha de treino
+
                 fichaTreino.adicionarExercicio(tipoLista, exercicio);
-
-                // Adiciona a ficha de treino ao repositório
-                RepositorioTreinos repositorioTreinos = new RepositorioTreinos(100);
-                repositorioTreinos.cadastrar(fichaTreino);
-
+                Main.repositorioGeral.getRepositorioTreinos().cadastrar(fichaTreino);
                 exibirAlertaInformativo("Exercício adicionado", "Exercício adicionado com sucesso à ficha de treino e ao repositório.");
             } else {
                 exibirAlertaErro("Erro ao adicionar exercício", "Cliente ou professor não encontrado.");
@@ -90,15 +86,15 @@ public class CadastroFichaTreinoController {
 
     private Cliente encontrarCliente(String nomeCliente) {
         System.out.println("Buscando cliente com o nome: " + nomeCliente);
-        Cliente cliente = Main.repositorioGeral.getRepositorioClientes().buscar(nomeCliente);
-        System.out.println("Cliente encontrado: " + cliente); // Verifique se o cliente foi encontrado
+        Cliente cliente = Main.repositorioGeral.getRepositorioClientes().buscarPorNome(nomeCliente);
+        System.out.println("Cliente encontrado: " + cliente);
         return cliente;
     }
 
     private Professor encontrarProfessor(String cpfProfessor) {
         System.out.println("Buscando professor com CPF: " + cpfProfessor);
         Professor professor = Main.repositorioGeral.getRepositorioProfessores().buscar(cpfProfessor);
-        System.out.println("Professor encontrado: " + professor); // Verifique se o professor foi encontrado
+        System.out.println("Professor encontrado: " + professor);
         return professor;
     }
 
