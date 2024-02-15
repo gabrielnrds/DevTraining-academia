@@ -31,7 +31,12 @@ public class BuscaAlnController {
     private Label LblEmailAluno;
 
     @FXML
+    private Label LblNomeProfessor;
+
+    @FXML
     private Label TxtResultado;
+
+
 
     @FXML
     void BuscarAluno(ActionEvent event) {
@@ -45,8 +50,7 @@ public class BuscaAlnController {
             LblNomeAluno.setText("Nome: " + alunoEncontrado.getNome());
             LblIdadeAluno.setText("Idade: " + alunoEncontrado.getIdade());
             LblEmailAluno.setText("E-mail: " + alunoEncontrado.getEmail());
-            // Limpa a mensagem de resultado anterior
-            TxtResultado.setText("");
+            LblNomeProfessor.setText("Professor: " + alunoEncontrado.getProfessor());
         } else {
             // Se o aluno não for encontrado, exibe uma mensagem de alerta
             mostrarAlertaNenhumAlunoEncontrado();
