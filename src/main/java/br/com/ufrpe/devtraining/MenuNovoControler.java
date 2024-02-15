@@ -57,7 +57,7 @@ public class MenuNovoControler implements Initializable {
 
     @FXML
     void TelaImprimirFicha(ActionEvent event) throws IOException {
-        Main.trocarTela(new FXMLLoader(Main.class.getResource("TelaImprimirFicha.fxml")).load());
+        Main.trocarTela(new FXMLLoader(Main.class.getResource("BuscaTreino.fxml")).load());
     }
 
     @FXML

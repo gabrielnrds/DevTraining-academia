@@ -12,11 +12,11 @@ public class RepositorioGeral implements Serializable {
     private RepositorioExercicios repositorioExercicios;
     private RepositorioTreinos repositorioTreinos;
     public RepositorioGeral(){
-        this.repositorioClientes= new RepositorioClientes(100);
-        this.repositorioExercicios= new RepositorioExercicios(100);
-        this.repositorioProfessores = new RepositorioProfessores(100);
-        this.repositorioTreinos =new RepositorioTreinos(100);
-        this.repositorioUsuarios = new RepositorioUsuarios(100);
+        this.repositorioClientes= new RepositorioClientes(1000);
+        this.repositorioExercicios= new RepositorioExercicios(1000);
+        this.repositorioProfessores = new RepositorioProfessores(1000);
+        this.repositorioTreinos =new RepositorioTreinos(1000);
+        this.repositorioUsuarios = new RepositorioUsuarios(1000);
     }
 
     public RepositorioProfessores getRepositorioProfessores() {
